@@ -6,4 +6,4 @@
 
 Color Palette:
 
-![Retro Game Colors](FontsAndColors/Retro game colors.png)
+![Retro Game Colors](FontsAndColors/Retro-game-colors.png)
