@@ -6,4 +6,4 @@
 
 Color Palette:
 
-![Retro Game Colors](/Users/tymondragon/workspace/g89/q1/PROJECT-MEMORY/FontsAndColors/Retro game colors.png)
+![Retro Game Colors](./FontsAndColors/RetroGameColors.png)
