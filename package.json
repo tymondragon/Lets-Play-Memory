@@ -19,6 +19,9 @@
   "homepage": "https://github.com/tymondragon/Lets-Play-Memory#readme",
   "dependencies": {
     "chai": "^4.1.2",
-    "mocha": "^5.1.1"
+    "igdb-api-node": "^3.1.4",
+    "mocha": "^5.1.1",
+    "node-import": "^0.9.2",
+    "omdb": "^0.8.0"
   }
 }
