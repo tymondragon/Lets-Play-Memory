@@ -34,6 +34,13 @@ body:hover figure:hover {
   height: 100vh;
   background-size: cover;
 }
+#game-background {
+  background-image: url("FontsAndColorsAndImages/Gameplay background.jpg");
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+}
 
 #Lets-Play {
   margin-bottom: 0px;
@@ -42,6 +49,17 @@ body:hover figure:hover {
 #Memory {
   margin-top: 0px;
 }
+.timer{
+  font-family: 'Press Start 2P', cursive;
+  color: #FFE727;
+  text-shadow:
+  -1px -1px 0 #597014,
+  1px -1px 0 #597014,
+  -1px 1px 0 #597014,
+  1px 1px 0 #597014;
+  background-color:
+}
+} */
 .footer {
   position: fixed;
   left: 0;

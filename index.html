@@ -31,22 +31,55 @@
           <p>To Test Your Memory</p>
         </div>
       </div>
+
+
+      <!-- Play Button-->
       <div class="row">
         <div class="col s12 center-align info">
-          <a href="#">
+          <a href="#modal1" class="modal-trigger">
             <p id="play">Play</p>
           </a>
         </div>
       </div>
     </div>
-  <div class="row">
-    <div class="col s12 footer">
+    <div class="row">
+      <div class="col s12 footer">
         © 2018 Blasta Enterprises
+      </div>
     </div>
-  </div>
-</main>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-  <script src="Javascript/main.js" charset="utf-8"></script>
+
+
+
+
+  <!--Modal for entering the game -->
+    <div id="modal1" class="modal">
+      <div class="modal-content center-align">
+        <h4>I want your info so you can play this game</h4>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">textsms</i>
+              <input type="text" id="autocomplete-input" class="autocomplete validate">
+              <label for="autocomplete-input">See your best time by giving us your name</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="game.html" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+    <!-- Modal for entering the game-->
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="Javascript/main.js" charset="utf-8"></script>
+  </main>
 </body>
 
 </html>

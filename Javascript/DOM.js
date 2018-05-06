@@ -1,6 +1,7 @@
 $(document).ready(function() {
    M.AutoInit();
    $('.parallax').parallax();
+    $('.modal').modal();
 
   // $("button").click(function() {
   //   let request = "http://www.omdbapi.com/?apikey=9537e44&s=horror&type=movie&page=6"
