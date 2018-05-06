@@ -6,7 +6,7 @@
 
 Color Palette:
 
-![Retro Game Colors](./FontsAndColors/RetroGameColors.png)
+![Retro Game Colors](./FontsAndColorsAndImages/RetroGameColors.png)
 
 
 Wireframes
