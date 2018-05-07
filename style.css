@@ -1,5 +1,7 @@
 /* //////////////////////////strobe////////////////////////// */
-
+.red {
+  background-color: red;
+}
 #play {
   color: #597014;
   animation: strobe 700ms steps(1, end) infinite;
@@ -27,7 +29,10 @@ body:hover figure:hover {
 }
 
 /* ///////////////////////Strobe//////////////////////////// */
-
+header {
+  padding-top: 40px;
+  margin-bottom: 20px;
+}
 #landing-background {
   background-image: url("FontsAndColorsAndImages/Landing Page Image.jpg");
   background-repeat: no-repeat;
@@ -35,11 +40,13 @@ body:hover figure:hover {
   background-size: cover;
 }
 #game-background {
+  box-sizing: border-box;
   background-image: url("FontsAndColorsAndImages/Gameplay background.jpg");
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
   background-size: cover;
+  text-align: center;
 }
 
 #Lets-Play {
@@ -49,17 +56,95 @@ body:hover figure:hover {
 #Memory {
   margin-top: 0px;
 }
-.timer{
-  font-family: 'Press Start 2P', cursive;
-  color: #FFE727;
-  text-shadow:
-  -1px -1px 0 #597014,
-  1px -1px 0 #597014,
-  -1px 1px 0 #597014,
-  1px 1px 0 #597014;
-  background-color:
+
+/* ////////////////////Grid COntainer/////////////////////// */
+article{
+    margin-top: 20px;
 }
-} */
+.game-board{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-rows: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1px;
+}
+.grid-body {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 8fr 2fr;
+  grid-template-rows: 30% 50% 20%;
+
+
+}
+
+header {
+  grid-row: 1/2;
+  grid-column: 1 / 4;
+  padding-top: 2%
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.sidebar-left {
+  grid-row: 2/3;
+  grid-column: 1 / 2;
+}
+.side {
+  grid-template-columns: 20% 70% 10%;
+  grid-template-rows: 50% 50%;
+  grid-gap: 5px;
+  grid-row-gap: 20px;
+}
+.card-back {
+  background-color: #597014;
+  border-style: solid;
+  border-color: #b6e52a;
+  border-radius: 5%;
+  align-self: center;
+  height: 60px;
+  width: 50%;
+}
+.card-type {
+  align-self: center;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  height: 30vh;
+  width: 20vh;
+}
+.card-amount {
+  align-self: center;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  height: 30vh;
+  width: 20vh;
+
+}
+
+
+article {
+  grid-row: 2/3;
+  grid-column: 2 / 3;
+}
+
+.sidebar-right {
+  grid-row: 2;
+  grid-column: 3 / 4;
+
+}
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  grid-row: 3/ 4;
+  grid-column: 1 / 4;
+}
+
+span {
+  color: white;
+}
+/* ////////////////////Grid COntainer/////////////////////// */
 .footer {
   position: fixed;
   left: 0;
@@ -67,7 +152,13 @@ body:hover figure:hover {
   height: 40px;
   width: 100%;
 }
-
+.image{
+  height: 50%;
+  width: 35%;
+  /* width: 100%;
+  height: 100%;
+  position: relative; */
+}
 .info p {
   font-family: 'Press Start 2P', cursive;
   font-size: 20px;
@@ -78,7 +169,16 @@ body:hover figure:hover {
   font-size: 85px;
 }
 
-
+.timer{
+  font-family: 'Press Start 2P', cursive;
+  color: #FFE727;
+  text-shadow:
+  -1px -1px 0 #597014,
+  1px -1px 0 #597014,
+  -1px 1px 0 #597014,
+  1px 1px 0 #597014;
+  background-color:
+}
 @media only screen and (max-width: 600px) {
   .title {
     font-size: 50px;
@@ -90,4 +190,9 @@ body:hover figure:hover {
   .info p {
     font-size: 15px;
   }
+}
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }

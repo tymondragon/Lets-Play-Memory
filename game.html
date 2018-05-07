@@ -3,64 +3,150 @@
 
 <head>
   <link href="https://fonts.googleapis.com/css?family=Monoton|Press+Start+2P" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.12/js/all.js" integrity="sha384-Voup2lBiiyZYkRto2XWqbzxHXwzcm4A5RfdfG6466bu5LqjwwrjXCMBQBLMWh7qR" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <title>The Game Memory</title>
 </head>
 
 <body id="game-background">
-  <!--  TIMER   NAV-->
-  <div class="row valign-wrapper center-align">
-    <div class="col s2">
-      <a class="btn-floating btn-large waves-effect waves-light red button"><i class="material-icons">add</i></a>
-    </div>
-    <div class="col s10">
+
+  <div class="grid-body">
+    <header>
       <h5 class="center-align"><span class="timer">Time</span></h5>
       <h6 class="center-align"> <span class="timer"> The counter will go here</span> </h6>
-    </div>
-  </div>
-  <div class="container">
+    </header>
 
-    <!-- Side Cards for stretch Goals -->
-    <div class="row">
-      <div class="col s12 m2">
-        <div class="row">
-          <div class="col s6 m12">
-            <div class="card-panel teal">
-              <span class="white-text flow-text">I am a very simple card.
-             </span>
-            </div>
-          </div>
-          <div class="col s6 m12">
-            <div class="card-panel teal">
-              <span class="white-text flow-text">I am a very simple card.
-             </span>
-            </div>
-          </div>
-        </div>
+    <aside class="sidebar-left side">
+      <div class="card-panel teal card-type">
+        <span class="white-text">This is a stretch of what type of cards they want.
+    </span>
       </div>
-      <!--  Side Cards For stretch Goals-->
-      <!--   Game Board  -->
-      <div  class="col s12 m10">
-        <div id="game-board"class="row">
-          <!-- <div id="card" class="col s2">
-            <div class="card-panel teal">
-              <span class="white-text">I am a very simple card.</span>
-            </div>
-          </div> -->
-        </div>
+      <div class="card-panel teal card-amount">
+        <span class="white-text">This is a stretch goal of giving the player a choice of how many cards.
+    </span>
       </div>
+    </aside>
 
+    <article>
+      <div id="game-board" class="game-board">
+        <ul class="deck" id ="deckOfCards">
+        <li class="card" type="flask">
+          <i class="fas fa-flask"></i>
+        </li>
+        <li class="card" type="bullseye">
+          <i class="fas fa-bullseye"></i>
+        </li>
+        <li class="card" type="bullseye">
+          <i class="fas fa-bullseye"></i>
+        </li>
+        <li class="card" type="flask">
+          <i class="fas fa-flask"></i>
+        </li>
+        <li class="card" type="gravity">
+          <i class="fab fa-grav"></i>
+        </li>
+        <li class="card" type="diagnoses">
+          <i class="fas fa-diagnoses"></i>
+        </li>
+        <li class="card" type="dna">
+          <i class="fas fa-dna"></i>
+        </li>
+        <li class="card" type="diagnoses">
+          <i class="fas fa-diagnoses"></i>
+        </li>
+        <li class="card" type="gravity">
+          <i class="fab fa-grav"></i>
+        </li>
+        <li class="card" type="dna">
+          <i class="fas fa-dna"></i>
+        </li>
+        <li class="card" type="jet">
+          <i class="fas fa-fighter-jet"></i>
+        </li>
+        <li class="card" type="swine">
+          <i class="fab fa-grunt"></i>
+        </li>
+        <li class="card" type="sun">
+          <i class="fas fa-sun"></i>
+        </li>
+        <li class="card" type="jet">
+          <i class="fas fa-fighter-jet"></i>
+        </li>
+        <li class="card" type="sun">
+          <i class="fas fa-sun"></i>
+        </li>
+        <li class="card" type="swine">
+          <i class="fab fa-grunt"></i>
+        </li>
+      </ul>
+      </div>
+    </article>
 
-
-    </div>
+    <footer>
+      <div id="pause" class="">
+        <button type="button" name="play" id="play"> <h6 class="timer">Play</h6> </button>
+      </div>
+      <div id="quit" class="timer">
+        <h6>Quit</h6>
+      </div>
+    </footer>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-  <script src="Javascript/main.js" charset="utf-8"></script>
+  <script src="Javascript/DOM.js" charset="utf-8"></script>
 </body>
 
 </html>
+<!--  TIMER   NAV-->
+<!-- <div class="row valign-wrapper center-align">
+<div class="col s2">
+<a class="btn-floating btn-large waves-effect waves-light red button"><i class="material-icons">add</i></a>
+</div>
+<div class="col s10">
+<h5 class="center-align"><span class="timer">Time</span></h5>
+<h6 class="center-align"> <span class="timer"> The counter will go here</span> </h6>
+</div>
+</div>
+<div class="container"> -->
+
+<!-- Side Cards for stretch Goals -->
+<!-- <div class="row">
+<div class="col s12 m2">
+<div class="row">
+<div class="col s6 m12">
+<div class="card-panel teal">
+<span class="white-text flow-text">I am a very simple card.
+</span>
+</div>
+</div>
+<div class="col s6 m12">
+<div class="card-panel teal">
+<span class="white-text flow-text">I am a very simple card.
+</span>
+</div>
+</div>
+</div>
+</div> -->
+<!--  Side Cards For stretch Goals-->
+<!--   Game Board  -->
+<!-- <div  class="col s12 m10">
+<div id="game-board"class="row"> -->
+<!-- <div class="grid-container"> -->
+<!-- <div id="card" class="col s2">
+<div class="card-panel teal">
+<span class="white-text">I am a very simple card.</span>
+</div>
+</div> -->
+<!--
+</div>
+</div>
+</div> -->
+
+
+<!--
+</div>
+</div> -->
