@@ -12,7 +12,6 @@ $(document).ready(function() {
   function shuffleDeck(array) {
     var currentIndex = array.length,
       temporaryValue, randomIndex;
-
     while (currentIndex !== 0) {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
@@ -20,10 +19,50 @@ $(document).ready(function() {
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
-
     return array;
   };
+  /////////////////////////////////////////////////////////
+  /////////////////Timer///////////////////
+  let second = 0,
+    minutes = 0
+  let timer = $("#timer")
+  let interval;
+  let cardChoice = []
+  // let target = $(event.target)
+
+  function startTimer() {
+    interval = setInterval(function() {
+      timer.text(minutes + " minutes " + second + " seconds")
+      second++;
+      if (second == 60) {
+        minutes++;
+        second = 0;
+      }
+    }, 1000);
+  }
+  /////////////////////////////////////////////////////////
+
+  ////////////////////////Picking Two Cards///////////////////////
+  function pickPairs(what) {
+    $(what).children().toggleClass("hide")
+     $( what ).toggleClass("show")
+    cardChoice.push(what)
+    if (cardChoice.length === 2) {
+      if (cardChoice[0].id === cardChoice[1].id) {
+
+        console.log('yay! they match')
+        cardChoice = []
+      } else {
+        console.log("BOOOOO")
+        cardChoice = []
+      }
+    }
+  }
   ////////////////////////////////////////////////////
+
+
+
+
   //////////let's get each card into the deck ///////////////////////
   let cardsArray = $(".card")
   let deckOfCards = $("#deckOfCards")
@@ -35,13 +74,16 @@ $(document).ready(function() {
       deckOfCards.append(cardsArray[j])
     }
     $(this).prop("disabled", true);
-    console.log("hello", deckOfCards, "this is the card", $(".card"))
-    $('.card').click(function() {
+    startTimer()
+
+    ////////////////////This is to see if the cards match//////////////
+    //////////////////// I know it is bad JU-JU to use an id for more than one element.  But this is the best way for me to identify cards//////////////////////////////////////////////////////////
+    $(cardsArray).on("click", function() {
+      pickPairs(this)
       event.preventDefault()
     })
   })
 })
-
 
 
 

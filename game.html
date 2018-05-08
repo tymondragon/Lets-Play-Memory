@@ -18,7 +18,7 @@
   <div class="grid-body">
     <header>
       <h5 class="center-align"><span class="timer">Time</span></h5>
-      <h6 class="center-align"> <span class="timer"> The counter will go here</span> </h6>
+      <h6 class="center-align"> <span id="timer" class="timer"> 0 minutes 0 seconds</span> </h6>
     </header>
 
     <aside class="sidebar-left side">
@@ -33,65 +33,63 @@
     </aside>
 
     <article>
-      <div id="game-board" class="game-board">
-        <ul class="deck" id ="deckOfCards">
-        <li class="card" type="flask">
-          <i class="fas fa-flask"></i>
-        </li>
-        <li class="card" type="bullseye">
-          <i class="fas fa-bullseye"></i>
-        </li>
-        <li class="card" type="bullseye">
-          <i class="fas fa-bullseye"></i>
-        </li>
-        <li class="card" type="flask">
-          <i class="fas fa-flask"></i>
-        </li>
-        <li class="card" type="gravity">
-          <i class="fab fa-grav"></i>
-        </li>
-        <li class="card" type="diagnoses">
-          <i class="fas fa-diagnoses"></i>
-        </li>
-        <li class="card" type="dna">
-          <i class="fas fa-dna"></i>
-        </li>
-        <li class="card" type="diagnoses">
-          <i class="fas fa-diagnoses"></i>
-        </li>
-        <li class="card" type="gravity">
-          <i class="fab fa-grav"></i>
-        </li>
-        <li class="card" type="dna">
-          <i class="fas fa-dna"></i>
-        </li>
-        <li class="card" type="jet">
-          <i class="fas fa-fighter-jet"></i>
-        </li>
-        <li class="card" type="swine">
-          <i class="fab fa-grunt"></i>
-        </li>
-        <li class="card" type="sun">
-          <i class="fas fa-sun"></i>
-        </li>
-        <li class="card" type="jet">
-          <i class="fas fa-fighter-jet"></i>
-        </li>
-        <li class="card" type="sun">
-          <i class="fas fa-sun"></i>
-        </li>
-        <li class="card" type="swine">
-          <i class="fab fa-grunt"></i>
-        </li>
-      </ul>
+      <div id="deckOfCards" class="game-board deck">
+        <div id="flask"class="card card-back">
+          <i class="fas fa-flask hide"></i>
+        </div>
+        <div id="bullseye"class="card card-back">
+          <i class="fas fa-bullseye hide"></i>
+        </div>
+        <div id="bullseye"class="card card-back">
+          <i class="fas fa-bullseye hide"></i>
+        </div>
+        <div id="flask"class="card card-back">
+          <i class="fas fa-flask hide"></i>
+        </div>
+        <div id="gravity"class="card card-back">
+          <i class="fab fa-grav hide"></i>
+        </div>
+        <div id="diagnoses"class="card card-back">
+          <i class="fas fa-diagnoses hide"></i>
+        </div>
+        <div id="dna"class="card card-back">
+          <i class="fas fa-dna hide"></i>
+        </div>
+        <div id="diagnoses"class="card card-back">
+          <i class="fas fa-diagnoses hide"></i>
+        </div>
+        <div id="gravity"class="card card-back">
+          <i class="fab fa-grav hide"></i>
+        </div>
+        <div id="dna"class="card card-back">
+          <i class="fas fa-dna hide"></i>
+        </div>
+        <div id="jet"class="card card-back">
+          <i class="fas fa-fighter-jet hide"></i>
+        </div>
+        <div id="swine"class="card card-back">
+          <i class="fab fa-grunt hide"></i>
+        </div>
+        <div id="sun" class="card card-back">
+          <i class="fas fa-sun hide"></i>
+        </div>
+        <div id="jet"class="card card-back">
+          <i class="fas fa-fighter-jet hide"></i>
+        </div>
+        <div id="sun" class="card card-back">
+          <i class="fas fa-sun hide"></i>
+        </div>
+        <div id="swine"class="card card-back">
+          <i class="fab fa-grunt hide"></i>
+        </div>
       </div>
     </article>
 
     <footer>
       <div id="pause" class="">
-        <button type="button" name="play" id="play"> <h6 class="timer">Play</h6> </button>
+        <button type="button" name="play" id="lets-play"> <h6>Play</h6> </button>
       </div>
-      <div id="quit" class="timer">
+      <div id="quit">
         <h6>Quit</h6>
       </div>
     </footer>

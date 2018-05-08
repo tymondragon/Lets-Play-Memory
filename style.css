@@ -1,7 +1,9 @@
 /* //////////////////////////strobe////////////////////////// */
+
 .red {
   background-color: red;
 }
+
 #play {
   color: #597014;
   animation: strobe 700ms steps(1, end) infinite;
@@ -29,16 +31,20 @@ body:hover figure:hover {
 }
 
 /* ///////////////////////Strobe//////////////////////////// */
+
 header {
   padding-top: 40px;
+  padding-right: 60px;
   margin-bottom: 20px;
 }
+
 #landing-background {
   background-image: url("FontsAndColorsAndImages/Landing Page Image.jpg");
   background-repeat: no-repeat;
   height: 100vh;
   background-size: cover;
 }
+
 #game-background {
   box-sizing: border-box;
   background-image: url("FontsAndColorsAndImages/Gameplay background.jpg");
@@ -58,45 +64,63 @@ header {
 }
 
 /* ////////////////////Grid COntainer/////////////////////// */
-article{
-    margin-top: 20px;
+
+article {
+  box-sizing: border-box;
+  margin-top: 20px;
 }
-.game-board{
+
+.game-board {
   display: grid;
   height: 100%;
   width: 100%;
-  grid-template-rows: repeat(4,1fr);
+  grid-template-rows: repeat(4, 110px);
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1px;
 }
+
+/*
+ */
+
+/* This is the layout of the game html page*/
+
 .grid-body {
   height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 8fr 2fr;
-  grid-template-rows: 30% 50% 20%;
-
-
+  grid-template-rows: 1fr 70% 1fr;
+  grid-gap: 2px;
 }
 
 header {
   grid-row: 1/2;
   grid-column: 1 / 4;
-  padding-top: 2%
-  display: flex;
+  padding-top: 2% display: flex;
   justify-content: space-around;
   align-items: center;
 }
+
 .sidebar-left {
   grid-row: 2/3;
   grid-column: 1 / 2;
 }
+
 .side {
+  display: grid;
   grid-template-columns: 20% 70% 10%;
   grid-template-rows: 50% 50%;
   grid-gap: 5px;
   grid-row-gap: 20px;
 }
+
+/* ///////////////The Card States//////////////// */
+
+.card {
+  margin: auto;
+  padding: 5%;
+}
+
 .card-back {
   background-color: #597014;
   border-style: solid;
@@ -106,6 +130,7 @@ header {
   height: 60px;
   width: 50%;
 }
+
 .card-type {
   align-self: center;
   grid-column: 2/3;
@@ -113,15 +138,28 @@ header {
   height: 30vh;
   width: 20vh;
 }
+
 .card-amount {
   align-self: center;
   grid-column: 2/3;
   grid-row: 2/3;
   height: 30vh;
   width: 20vh;
-
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  background-color: #A2D49F;
+  border-style: inset;
+  border-radius: 5%;
+  border-color: #F26247;
+  font-size: 33px;
+}
+
+/*////////////////////////////////////////////////////  */
 
 article {
   grid-row: 2/3;
@@ -131,8 +169,8 @@ article {
 .sidebar-right {
   grid-row: 2;
   grid-column: 3 / 4;
-
 }
+
 footer {
   display: flex;
   justify-content: space-around;
@@ -144,7 +182,9 @@ footer {
 span {
   color: white;
 }
+
 /* ////////////////////Grid COntainer/////////////////////// */
+
 .footer {
   position: fixed;
   left: 0;
@@ -152,13 +192,15 @@ span {
   height: 40px;
   width: 100%;
 }
-.image{
+
+.image {
   height: 50%;
   width: 35%;
   /* width: 100%;
   height: 100%;
   position: relative; */
 }
+
 .info p {
   font-family: 'Press Start 2P', cursive;
   font-size: 20px;
@@ -169,16 +211,13 @@ span {
   font-size: 85px;
 }
 
-.timer{
+#lets-play, #quit, .timer {
   font-family: 'Press Start 2P', cursive;
   color: #FFE727;
-  text-shadow:
-  -1px -1px 0 #597014,
-  1px -1px 0 #597014,
-  -1px 1px 0 #597014,
-  1px 1px 0 #597014;
+  text-shadow: -1px -1px 0 #597014, 1px -1px 0 #597014, -1px 1px 0 #597014, 1px 1px 0 #597014;
   background-color:
 }
+
 @media only screen and (max-width: 600px) {
   .title {
     font-size: 50px;
@@ -191,8 +230,80 @@ span {
     font-size: 15px;
   }
 }
+
 * {
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
+
+.deck {
+  background: #716F71;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 0 3em;
+}
+
+?
+/*
+.deck .card {
+	height: 3.7rem;
+	width: 3.7rem;
+	margin: 0.2rem 0.2rem;
+	background: #141214;;
+	font-size: 0;
+	color: #ffffff;
+	border-radius: 5px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+	transform: rotateY(0);
+	background: #02b3e4;
+	cursor: default;
+	animation-name: flipInY;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+}
+
+*/
+
+hide {
+  display: none
+}
+
+.show {
+  font-size: 33px;
+}
+
+/* .card.match {
+	cursor: default;
+	background: #E5F720;
+	font-size: 33px;
+	animation-name: rubberBand;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+} */
+
+/*
+.deck .card.unmatched {
+	animation-name: pulse;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+	background: #e2043b;
+}
+
+.deck .card.disabled {
+	pointer-events: none;
+	opacity: 0.9;
+} */
