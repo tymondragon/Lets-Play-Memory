@@ -45,14 +45,29 @@ $(document).ready(function() {
   ////////////////////////Picking Two Cards///////////////////////
   function pickPairs(what) {
     $(what).children().toggleClass("hide")
-     $( what ).toggleClass("show")
+    $(what).toggleClass("show")
+    // $(what).off("click")
+    $(what).addClass("chosen")
     cardChoice.push(what)
+    console.log($(what));
     if (cardChoice.length === 2) {
       if (cardChoice[0].id === cardChoice[1].id) {
-
+        // match()
+        // cardChoice[0].addClass("correct")
+        // cardChoice[1].addClass("correct")
         console.log('yay! they match')
         cardChoice = []
       } else {
+        // cardChoice.map(what,function(){
+        //   $what.bind("click")
+        // })
+        $.map(cardChoice, function(what) {
+          $(what).children().toggleClass("hide")
+          $(what).toggleClass("show")
+          // $(what).on("click")
+        });
+        // cardChoice.map(wrong ,function(){
+        // let boo = wrong.toggleClass("hide")})
         console.log("BOOOOO")
         cardChoice = []
       }
@@ -79,7 +94,8 @@ $(document).ready(function() {
     ////////////////////This is to see if the cards match//////////////
     //////////////////// I know it is bad JU-JU to use an id for more than one element.  But this is the best way for me to identify cards//////////////////////////////////////////////////////////
     $(cardsArray).on("click", function() {
-      pickPairs(this)
+      if ($(this).children().hasClass("hide")){
+      pickPairs(this)}
       event.preventDefault()
     })
   })

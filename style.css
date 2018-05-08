@@ -85,11 +85,11 @@ article {
 /* This is the layout of the game html page*/
 
 .grid-body {
+  display: grid;
   height: 100%;
   width: 100%;
-  display: grid;
   grid-template-columns: 2fr 8fr 2fr;
-  grid-template-rows: 1fr 70% 1fr;
+  grid-template-rows: 1fr 10 1fr;
   grid-gap: 2px;
 }
 
@@ -104,6 +104,8 @@ header {
 .sidebar-left {
   grid-row: 2/3;
   grid-column: 1 / 2;
+
+
 }
 
 .side {
@@ -157,6 +159,10 @@ header {
   border-radius: 5%;
   border-color: #F26247;
   font-size: 33px;
+}
+.show .correct {
+  opacity: 0.5;
+    filter: alpha(opacity=50);
 }
 
 /*////////////////////////////////////////////////////  */
