@@ -4,7 +4,7 @@
   background-color: red;
 }
 
-#strobe{
+#strobe {
   color: #597014;
   animation: strobe 700ms steps(1, end) infinite;
   transition: flex .3s;
@@ -33,10 +33,14 @@ body:hover figure:hover {
 /* ///////////////////////Strobe//////////////////////////// */
 
 header {
-  padding-top: 40px;
+  padding-top: 75px;
   padding-right: 60px;
   margin-bottom: 20px;
   grid-column: 1/2 2/3 3/4
+}
+h5 {
+    font-size: 2rem;
+
 }
 
 #landing-background {
@@ -57,7 +61,7 @@ header {
 }
 
 #Lets-Play {
-  margin-bottom: 0px;
+  color: margin-bottom: 0px;
 }
 
 #Memory {
@@ -72,16 +76,14 @@ header {
   background-size: 20px 20px;
 }
 
-
 /* ////////////////////Grid COntainer/////////////////////// */
 
-article {
-  box-sizing: border-box;
+div#deckOfCards {
+    margin-top: 100px;
 }
-
 .game-board {
   display: grid;
-  height: 100%;
+  height: 80%;
   width: 100%;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(8, 1fr);
@@ -99,7 +101,7 @@ article {
   height: 100%;
   width: 100%;
   grid-template-columns: 2fr 8fr 2fr;
-  grid-template-rows: 1fr 10 1fr;
+  grid-template-rows: 2fr 8fr 2fr;
   grid-gap: 2px;
 }
 
@@ -112,7 +114,7 @@ header {
 }
 
 .sidebar-left {
-  grid-row: 2/3;
+  grid-row: 1/4;
   grid-column: 1 / 2;
 }
 
@@ -123,6 +125,7 @@ header {
   grid-gap: 5px;
   grid-row-gap: 20px;
 }
+
 .card-type {
   align-self: center;
   grid-column: 2/3;
@@ -149,9 +152,7 @@ header {
 
 .card-back {
   display: grid;
-  background-image:
-    radial-gradient(#af9946 20%, transparent 0),
-    radial-gradient(#af9946 20%, transparent 0);
+  background-image: radial-gradient(#af9946 20%, transparent 0), radial-gradient(#af9946 20%, transparent 0);
   background-size: 30px 30px;
   background-position: 0 0, 15px 15px;
   background-color: #e0cc38;
@@ -162,7 +163,8 @@ header {
   height: 95%;
   width: 100%;
 }
-body {
+
+/* body {
   background:black;
   background-image:
     radial-gradient(grey 20%, transparent 0),
@@ -170,7 +172,7 @@ body {
   background-size: 30px 30px;
   background-position: 0 0, 15px 15px;
 
-}
+} */
 
 .hide {
   display: none;
@@ -210,7 +212,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   grid-row: 3/ 4;
-  grid-column: 1 / 4;
+  grid-column: 2 / 3;
 }
 
 span {
@@ -225,6 +227,7 @@ span {
   bottom: 0;
   height: 40px;
   width: 100%;
+  font-size: 20px;
 }
 
 .image {
@@ -237,18 +240,19 @@ span {
 
 .info p {
   font-family: 'Press Start 2P', cursive;
-  font-size: 20px;
+  font-size: 40px;
 }
 
 .title {
+  margin-bottom: 15px;
   font-family: 'Monoton';
-  font-size: 85px;
+  font-size: 100px;
 }
 
-h4, p, #lets-play, #quit, #minutes, #seconds, #play, .timer {
+h4, #lets-play, #quit, #minutes, #seconds, #play, .timer {
   font-family: 'Press Start 2P', cursive;
   color: #FFE727;
-  text-shadow: -1px -1px 0 #597014, 1px -1px 0 #597014, -1px 1px 0 #597014, 1px 1px 0 #597014;
+  text-shadow: -2px -2px 0 #597014, 2px -2px 0 #597014, -2px 2px 0 #597014, 2px 2px 0 #597014;
 }
 
 @media only screen and (max-width: 600px) {
@@ -279,57 +283,10 @@ h4, p, #lets-play, #quit, #minutes, #seconds, #play, .timer {
   align-items: center;
   margin: 0 0 3em;
 }
-
-/*///////////GAME OVER MODAL////////////// */
-
-/*
-.deck .card {
-	height: 3.7rem;
-	width: 3.7rem;
-	margin: 0.2rem 0.2rem;
-	background: #141214;;
-	font-size: 0;
-	color: #ffffff;
-	border-radius: 5px;
-	cursor: pointer;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+footer div button h6 {
+  font-size: 25px;
+  vertical-align: text-top;
 }
-
-.deck .card.open {
-	transform: rotateY(0);
-	background: #02b3e4;
-	cursor: default;
-	animation-name: flipInY;
-	-webkit-backface-visibility: visible !important;
-	backface-visibility: visible !important;
-	animation-duration: .75s;
+.btn {
+  height: 50px;
 }
-
-*/
-
-/* .card.match {
-	cursor: default;
-	background: #E5F720;
-	font-size: 33px;
-	animation-name: rubberBand;
-	-webkit-backface-visibility: visible !important;
-	backface-visibility: visible !important;
-	animation-duration: .75s;
-} */
-
-/*
-.deck .card.unmatched {
-	animation-name: pulse;
-	-webkit-backface-visibility: visible !important;
-	backface-visibility: visible !important;
-	animation-duration: .75s;
-	background: #e2043b;
-}
-
-.deck .card.disabled {
-	pointer-events: none;
-	opacity: 0.9;
-} */

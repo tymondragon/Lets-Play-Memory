@@ -7,18 +7,18 @@ $(document).ready(function() {
   M.AutoInit();
   // $('.modal').modal();
 
-////////////Muh Variables/////////////////////
+  ////////////Muh Variables/////////////////////
 
   let moves = 0
   let count = 0
-  let second = 0, minute = 0
+  // let second = 0, minute = 0
   let timer = $("#timer")
   let interval;
   let cardChoice = []
   let cardsArray = $(".card")
   let deckOfCards = $("#deckOfCards")
 
-////////////Muh Variables/////////////////////
+  ////////////Muh Variables/////////////////////
 
 
 
@@ -41,34 +41,48 @@ $(document).ready(function() {
 
 
   /////////////////Timer///////////////////
-  function startTimer() {
-    interval = setInterval(function() {
-      timer.text(`${minute} minutes ${second} seconds`)
-      second++;
-      if (second == 60) {
-        minute++;
-        second = 0;
+  let clock = {
+    second: 0,
+    minute: 0,
+    start: function() {
+      this.interval = setInterval(function() {
+        timer.text(`${clock.minute} minutes ${clock.second} seconds`)
+        clock.second++;
+        if (clock.second == 60) {
+          clock.minute++;
+          clock.second = 0;
+        }
+      }, 1000);
+    },
+    pause: function() {
+      clearInterval(this.interval);
+      delete this.interval;
+    },
+    resume: function() {
+
+      if (!this.interval) {
+        clock.start();
       }
-    }, 1000);
+    }
   }
   /////////////////Timer///////////////////
-////////////////////Match Function///////////////////////////
-function match(){
-  $.map(cardChoice, function(what) {
-    $(what).addClass("correct")
-  })
-  count++
-  moves++
-  if (count === 1){
-    clearInterval(interval);
-  $(cardsArray).off("click")
-  $('#You-Win').modal('open')
-  $("#minutes").text(minute)
-  $("#seconds").text(second)
+  ////////////////////Match Function///////////////////////////
+  function match() {
+    $.map(cardChoice, function(what) {
+      $(what).addClass("correct")
+    })
+    count++
+    moves++
+    if (count === 8) {
+      clearInterval(interval);
+      $(cardsArray).off("click")
+      $('#You-Win').modal('open')
+      $("#minutes").text(minute)
+      $("#seconds").text(second)
+    }
+    console.log(moves)
   }
-  console.log(moves)
-}
-////////////////////Match Function///////////////////////////
+  ////////////////////Match Function///////////////////////////
 
   ///////////////////Do Not Match Function //////////////////////////
   function doNotMatch() {
@@ -76,7 +90,7 @@ function match(){
       $(what).children().toggleClass("hide")
       $(what).toggleClass("show")
     })
-    moves ++
+    moves++
     console.log(moves)
   }
   ///////////////////Do Not Match Function //////////////////////////
@@ -100,7 +114,7 @@ function match(){
   //////////////////// I know it is bad JU-JU to use an id for more than one element.  But this is the best way for me to identify cards//////////////////////////////////////////////////////////
   function compare(array) {
     if (array[0].id === array[1].id) {
-       match(cardChoice)
+      match(cardChoice)
       cardChoice = []
     } else {
       doNotMatch(cardChoice)
@@ -109,22 +123,22 @@ function match(){
   }
   //////////////////CardChoice/////////////////////////////
 
-///////////////////////Game Over//////////////
+  ///////////////////////Game Over//////////////
 
-///////////////////////Game Over//////////////
+  ///////////////////////Game Over//////////////
 
 
 
   //////////let's get each card into the deck ///////////////////////
   ////////////////////////start the game by pressing play!!!!!/////
-  $("button").click(function() {
+  $("#lets-play").click(function() {
     shuffleDeck(cardsArray)
     deckOfCards.empty()
     for (let j = 0; j < cardsArray.length; j++) {
       deckOfCards.append(cardsArray[j])
     }
     $(this).prop("disabled", true);
-    startTimer()
+    clock.start()
     $(cardsArray).on("click", function() {
       if ($(this).children().hasClass("hide") && cardChoice.length < 2) {
         pickPairs(this)
@@ -132,8 +146,12 @@ function match(){
       event.preventDefault()
     })
   })
-  // $('#Quit-Game').close();
-  // $('#Quit-Game').open();
+  $("#quit").click(function() {
+    clock.pause()
+  })
+  $("#no").click(function(){
+    clock.resume()
+  })
 })
 //////////let's get each card into the deck ///////////////////////
 
