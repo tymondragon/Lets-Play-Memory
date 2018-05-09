@@ -73,14 +73,15 @@ $(document).ready(function() {
     })
     count++
     moves++
-    if (count === 8) {
+    $("#moves").text(`${moves} Moves`)
+    if (count === 2) {
       clearInterval(interval);
       $(cardsArray).off("click")
       $('#You-Win').modal('open')
-      $("#minutes").text(minute)
-      $("#seconds").text(second)
+      $("#modal-minutes").text(`${clock.minute}`)
+      $("#modal-seconds").text(`${clock.second}`)
+      $("#modal-moves").text(`${moves}`)
     }
-    console.log(moves)
   }
   ////////////////////Match Function///////////////////////////
 
@@ -89,9 +90,11 @@ $(document).ready(function() {
     $.map(cardChoice, function(what) {
       $(what).children().toggleClass("hide")
       $(what).toggleClass("show")
+      $(what).toggleClass("background-style")
+
     })
     moves++
-    console.log(moves)
+    $("#moves").text(moves)
   }
   ///////////////////Do Not Match Function //////////////////////////
 
@@ -101,6 +104,8 @@ $(document).ready(function() {
     $(what).children().toggleClass("hide")
     $(what).toggleClass("show")
     $(what).addClass("chosen")
+    $(what).toggleClass("background-style")
+
     cardChoice.push(what)
     if (cardChoice.length === 2) {
       setTimeout(compare, 750, cardChoice)
@@ -150,7 +155,8 @@ $(document).ready(function() {
     clock.pause()
   })
   $("#no").click(function(){
-    clock.resume()
+    if (clock.second > 0){
+    clock.resume()}
   })
 })
 //////////let's get each card into the deck ///////////////////////

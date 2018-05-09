@@ -36,11 +36,11 @@ header {
   padding-top: 75px;
   padding-right: 60px;
   margin-bottom: 20px;
-  grid-column: 1/2 2/3 3/4
+  grid-column: 1/2 2/3 3/4 4/5
 }
-h5 {
-    font-size: 2rem;
 
+h5 {
+  font-size: 2rem;
 }
 
 #landing-background {
@@ -68,7 +68,7 @@ h5 {
   margin-top: 0px;
 }
 
-/* modal background */
+/* modal */
 
 .modal-background {
   background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
@@ -76,11 +76,18 @@ h5 {
   background-size: 20px 20px;
 }
 
+h4, #play, .modal-font {
+  font-family: 'Press Start 2P', cursive;
+  color: #FFE727;
+  text-shadow: -2px -2px 0 #924B53, 2px -2px 0 #924B53, -2px 2px 0 #924B53, 2px 2px 0#924B53;
+}
+
 /* ////////////////////Grid COntainer/////////////////////// */
 
 div#deckOfCards {
-    margin-top: 100px;
+  margin-top: 100px;
 }
+
 .game-board {
   display: grid;
   height: 80%;
@@ -106,6 +113,7 @@ div#deckOfCards {
 }
 
 header {
+  display: grid;
   grid-row: 1/2;
   grid-column: 1 / 4;
   padding-top: 2% display: flex;
@@ -118,10 +126,14 @@ header {
   grid-column: 1 / 2;
 }
 
+aside {
+  grid-column: s
+}
+
 .side {
   display: grid;
-  grid-template-columns: 20% 70% 10%;
-  grid-template-rows: 50% 50%;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
   grid-gap: 5px;
   grid-row-gap: 20px;
 }
@@ -150,9 +162,12 @@ header {
   padding: 5%;
 }
 
+.background-style {
+  background-image: radial-gradient(#af9946 20%, transparent 0), radial-gradient(#af9946 20%, transparent 0);
+}
+
 .card-back {
   display: grid;
-  background-image: radial-gradient(#af9946 20%, transparent 0), radial-gradient(#af9946 20%, transparent 0);
   background-size: 30px 30px;
   background-position: 0 0, 15px 15px;
   background-color: #e0cc38;
@@ -164,35 +179,26 @@ header {
   width: 100%;
 }
 
-/* body {
-  background:black;
-  background-image:
-    radial-gradient(grey 20%, transparent 0),
-    radial-gradient(grey 20%, transparent 0);
-  background-size: 30px 30px;
-  background-position: 0 0, 15px 15px;
-
-} */
-
 .hide {
   display: none;
 }
 
 .show {
+  justify-content: center;
+  align-content: space-evenly;
   margin: auto;
-  background-color: #A2D49F;
-  border-style: inset;
+  background-color: #73b142;
+  border-style: solid;
   border-radius: 5%;
-  border-color: #F26247;
+  border-color: #3a6518;
   font-size: 60px;
   align-self: center;
 }
 
 .correct {
-  opacity: 0.5;
-  border-color: #ffc2b7;
-  background-color: #B8293A;
-  filter: alpha(opacity=50);
+  opacity: .7;
+  border-color: #327d3b;
+  background-color: #72b142;
 }
 
 /*////////////////////////////////////////////////////  */
@@ -207,6 +213,14 @@ article {
   grid-column: 3 / 4;
 }
 
+time-count {
+  grid-column: 2/3;
+}
+
+move-count {
+  grid-column: 3/4;
+}
+
 footer {
   display: flex;
   justify-content: space-around;
@@ -217,6 +231,10 @@ footer {
 
 span {
   color: white;
+}
+
+.transform {
+  transform: rotate(270deg);
 }
 
 /* ////////////////////Grid COntainer/////////////////////// */
@@ -249,7 +267,13 @@ span {
   font-size: 100px;
 }
 
-h4, #lets-play, #quit, #minutes, #seconds, #play, .timer {
+.transform-title {
+  /* margin-bottom: 15px; */
+  font-family: 'Monoton';
+  font-size: 80px;
+}
+
+#lets-play, #quit, #minutes, #seconds, .timer {
   font-family: 'Press Start 2P', cursive;
   color: #FFE727;
   text-shadow: -2px -2px 0 #597014, 2px -2px 0 #597014, -2px 2px 0 #597014, 2px 2px 0 #597014;
@@ -275,18 +299,26 @@ h4, #lets-play, #quit, #minutes, #seconds, #play, .timer {
 }
 
 .deck {
-  background: #716F71;
+  background: #c5445b;
   padding: 1%;
+  border-style: inset;
+  border-color: #1f202317;
   border-radius: 4px;
-  box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
+  box-shadow: 8px 9px 26px 0 rgba(117, 47, 80, 0.43);
   /* justify-content: space-around; */
   align-items: center;
   margin: 0 0 3em;
 }
+
 footer div button h6 {
   font-size: 25px;
   vertical-align: text-top;
 }
+
 .btn {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #5e7414;
+  background-color: #72b041;
   height: 50px;
 }

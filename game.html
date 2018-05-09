@@ -17,81 +17,89 @@
 
   <div class="grid-body">
     <header>
-      <h5 class="center-align"><span class="timer">Time</span></h5>
-      <h6 class="center-align"> <span id="timer" class="timer"> 0 minutes 0 seconds</span> </h6>
+      <div class="time-count">
+        <h5 class=""><span class="timer">Time</span></h5>
+        <h6 class=""> <span id="timer" class="modal-font"> 0 Minutes 0 Seconds</span> </h6>
+      </div>
+      <div class="move-count">
+        <h5 class=""><span class="timer">Moves</span></h5>
+        <h6 class=""> <span id='moves' class="modal-font">0 Moves</span> </h6>
+      </div>
     </header>
 
-    <aside class="sidebar-left side">
-      <p>MEMORY GO!</p>
+    <aside class="side transform">
+      <!-- <p class="title">MEMORY GO!</p> -->
     </aside>
 
     <article>
       <div id="deckOfCards" class="game-board deck">
-        <div id="flask" class="card card-back">
+        <div id="flask" class="background-style card card-back">
           <i class="fas fa-flask hide"></i>
         </div>
-        <div id="bullseye" class="card card-back">
+        <div id="bullseye" class="background-style card card-back">
           <i class="fas fa-bullseye hide"></i>
         </div>
-        <div id="bullseye" class="card card-back">
+        <div id="bullseye" class="background-style card card-back">
           <i class="fas fa-bullseye hide"></i>
         </div>
-        <div id="flask" class="card card-back">
+        <div id="flask" class="background-style card card-back">
           <i class="fas fa-flask hide"></i>
         </div>
-        <div id="gravity" class="card card-back">
+        <div id="gravity" class="background-style card card-back">
           <i class="fab fa-grav hide"></i>
         </div>
-        <div id="diagnoses" class="card card-back">
+        <div id="diagnoses" class="background-style card card-back">
           <i class="fas fa-diagnoses hide"></i>
         </div>
-        <div id="dna" class="card card-back">
+        <div id="dna" class="background-style card card-back">
           <i class="fas fa-dna hide"></i>
         </div>
-        <div id="diagnoses" class="card card-back">
+        <div id="diagnoses" class="background-style card card-back">
           <i class="fas fa-diagnoses hide"></i>
         </div>
-        <div id="gravity" class="card card-back">
+        <div id="gravity" class="background-style card card-back">
           <i class="fab fa-grav hide"></i>
         </div>
-        <div id="dna" class="card card-back">
+        <div id="dna" class="background-style card card-back">
           <i class="fas fa-dna hide"></i>
         </div>
-        <div id="jet" class="card card-back">
+        <div id="jet" class="background-style card card-back">
           <i class="fas fa-fighter-jet hide"></i>
         </div>
-        <div id="swine" class="card card-back">
+        <div id="swine" class="background-style card card-back">
           <i class="fab fa-grunt hide"></i>
         </div>
-        <div id="sun" class="card card-back">
+        <div id="sun" class="background-style card card-back">
           <i class="fas fa-sun hide"></i>
         </div>
-        <div id="jet" class="card card-back">
+        <div id="jet" class="background-style card card-back">
           <i class="fas fa-fighter-jet hide"></i>
         </div>
-        <div id="sun" class="card card-back">
+        <div id="sun" class="background-style card card-back">
           <i class="fas fa-sun hide"></i>
         </div>
-        <div id="swine" class="card card-back">
+        <div id="swine" class="background-style card card-back">
           <i class="fab fa-grunt hide"></i>
         </div>
       </div>
       <!-- Finish Modal -->
       <div id="You-Win" class="modal modal-background">
         <div class="modal-content">
-          <h4>Congratulations!</h4>
-          <p class="timer">You finished the game in <span id="minutes"></span> minutes and <span id="seconds"></span> seconds </p>
-          <a href="game.html" class="modal-close waves-effect waves-green btn-flat timer">Play Again?</a>
-          <a href="index.html" class="modal-close waves-effect waves-green btn-flat timer">Quit?</a>
+          <h4 class="modal-font">Congratulations!</h4>
+          <p class="modal-font">You finished the game in <span id="modal-minutes" class = 'modal-font'></span> minutes <span id="modal-seconds" class = 'modal-font'></span> seconds in <span id="modal-moves" class = 'modal-font'></span> moves.  Memory harder next time!</p>
+
+
+          <a href="game.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Play Again?</a>
+          <a href="index.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Quit?</a>
         </div>
       </div>
 <!-- Quit Modal -->
       <div id="Quit-Game" class="modal modal-background">
         <div class="modal-content">
           <h4>Paused</h4>
-          <p>Are you sure you want to quit? </p>
-          <a id="yes" href="index.html" class="modal-close waves-effect waves-green btn-flat timer">Yes</a>
-          <a  id="no" class="modal-close waves-effect waves-green btn-flat timer">No</a>
+          <p class=modal-font>Are you sure you want to quit? </p>
+          <a id="yes" href="index.html" class="modal-close waves-effect waves-green btn-flat modal-font">Yes</a>
+          <a  id="no" class="modal-close waves-effect waves-green btn-flat modal-font">No</a>
         </div>
       </div>
 
