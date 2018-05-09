@@ -34,63 +34,84 @@
 
     <article>
       <div id="deckOfCards" class="game-board deck">
-        <div id="flask"class="card card-back">
+        <div id="flask" class="card card-back">
           <i class="fas fa-flask hide"></i>
         </div>
-        <div id="bullseye"class="card card-back">
+        <div id="bullseye" class="card card-back">
           <i class="fas fa-bullseye hide"></i>
         </div>
-        <div id="bullseye"class="card card-back">
+        <div id="bullseye" class="card card-back">
           <i class="fas fa-bullseye hide"></i>
         </div>
-        <div id="flask"class="card card-back">
+        <div id="flask" class="card card-back">
           <i class="fas fa-flask hide"></i>
         </div>
-        <div id="gravity"class="card card-back">
+        <div id="gravity" class="card card-back">
           <i class="fab fa-grav hide"></i>
         </div>
-        <div id="diagnoses"class="card card-back">
+        <div id="diagnoses" class="card card-back">
           <i class="fas fa-diagnoses hide"></i>
         </div>
-        <div id="dna"class="card card-back">
+        <div id="dna" class="card card-back">
           <i class="fas fa-dna hide"></i>
         </div>
-        <div id="diagnoses"class="card card-back">
+        <div id="diagnoses" class="card card-back">
           <i class="fas fa-diagnoses hide"></i>
         </div>
-        <div id="gravity"class="card card-back">
+        <div id="gravity" class="card card-back">
           <i class="fab fa-grav hide"></i>
         </div>
-        <div id="dna"class="card card-back">
+        <div id="dna" class="card card-back">
           <i class="fas fa-dna hide"></i>
         </div>
-        <div id="jet"class="card card-back">
+        <div id="jet" class="card card-back">
           <i class="fas fa-fighter-jet hide"></i>
         </div>
-        <div id="swine"class="card card-back">
+        <div id="swine" class="card card-back">
           <i class="fab fa-grunt hide"></i>
         </div>
         <div id="sun" class="card card-back">
           <i class="fas fa-sun hide"></i>
         </div>
-        <div id="jet"class="card card-back">
+        <div id="jet" class="card card-back">
           <i class="fas fa-fighter-jet hide"></i>
         </div>
         <div id="sun" class="card card-back">
           <i class="fas fa-sun hide"></i>
         </div>
-        <div id="swine"class="card card-back">
+        <div id="swine" class="card card-back">
           <i class="fab fa-grunt hide"></i>
         </div>
       </div>
+      <!-- Finish Modal -->
+      <div id="You-Win" class="modal modal-background">
+        <div class="modal-content">
+          <h4>Congratulations!</h4>
+          <p>You finished the game in <span id="minutes"></span> minutes and <span id="seconds"></span> seconds </p>
+          <a href="game.html" class="modal-close waves-effect waves-green btn-flat timer">Play Again?</a>
+          <a href="index.html" class="modal-close waves-effect waves-green btn-flat timer">Quit?</a>
+        </div>
+      </div>
+<!-- Quit Modal -->
+      <div id="Quit-Game" class="modal modal-background">
+        <div class="modal-content">
+          <h4>Paused</h4>
+          <p>Are you sure you want to quit? </p>
+          <a href="index.html" class="modal-close waves-effect waves-green btn-flat timer">Yes</a>
+          <a  class="modal-close waves-effect waves-green btn-flat timer">No</a>
+        </div>
+      </div>
+
+<!--  -->
     </article>
 
     <footer>
-      <div id="pause" class="">
+      <div id="play" class="">
         <button type="button" name="play" id="lets-play"> <h6>Play</h6> </button>
       </div>
       <div id="quit">
-        <h6>Quit</h6>
+        <button type="button" name="play" id="quit" data-target="Quit-Game" class="btn modal-trigger">
+        <h6>Quit</h6> </button>
       </div>
     </footer>
   </div>

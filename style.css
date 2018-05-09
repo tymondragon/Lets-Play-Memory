@@ -4,7 +4,7 @@
   background-color: red;
 }
 
-#play {
+#strobe{
   color: #597014;
   animation: strobe 700ms steps(1, end) infinite;
   transition: flex .3s;
@@ -36,6 +36,7 @@ header {
   padding-top: 40px;
   padding-right: 60px;
   margin-bottom: 20px;
+  grid-column: 1/2 2/3 3/4
 }
 
 #landing-background {
@@ -63,20 +64,29 @@ header {
   margin-top: 0px;
 }
 
+/* modal background */
+
+.modal-background {
+  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
+}
+
+
 /* ////////////////////Grid COntainer/////////////////////// */
 
 article {
   box-sizing: border-box;
-  margin-top: 20px;
 }
 
 .game-board {
   display: grid;
   height: 100%;
   width: 100%;
-  grid-template-rows: repeat(4, 110px);
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  grid-row-gap: 1px;
+  grid-column-gap: 5px;
 }
 
 /*
@@ -113,24 +123,6 @@ header {
   grid-gap: 5px;
   grid-row-gap: 20px;
 }
-
-/* ///////////////The Card States//////////////// */
-
-.card {
-  margin: auto;
-  padding: 5%;
-}
-
-.card-back {
-  background-color: #597014;
-  border-style: solid;
-  border-color: #b6e52a;
-  border-radius: 5%;
-  align-self: center;
-  height: 60px;
-  width: 50%;
-}
-
 .card-type {
   align-self: center;
   grid-column: 2/3;
@@ -147,16 +139,51 @@ header {
   width: 20vh;
 }
 
+/* ///////////////The Card States//////////////// */
+
+.card {
+  box-shadow: 3px 3px;
+  margin: auto;
+  padding: 5%;
+}
+
+.card-back {
+  display: grid;
+  background-image:
+    radial-gradient(#af9946 20%, transparent 0),
+    radial-gradient(#af9946 20%, transparent 0);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  background-color: #e0cc38;
+  border-style: ridge;
+  border-color: black;
+  border-radius: 9%;
+  align-self: center;
+  height: 95%;
+  width: 100%;
+}
+body {
+  background:black;
+  background-image:
+    radial-gradient(grey 20%, transparent 0),
+    radial-gradient(grey 20%, transparent 0);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+
+}
+
 .hide {
   display: none;
 }
 
 .show {
+  margin: auto;
   background-color: #A2D49F;
   border-style: inset;
   border-radius: 5%;
   border-color: #F26247;
-  font-size: 33px;
+  font-size: 60px;
+  align-self: center;
 }
 
 .correct {
@@ -218,11 +245,10 @@ span {
   font-size: 85px;
 }
 
-#lets-play, #quit, .timer {
+h4, p, #lets-play, #quit, #minutes, #seconds, #play, .timer {
   font-family: 'Press Start 2P', cursive;
   color: #FFE727;
   text-shadow: -1px -1px 0 #597014, 1px -1px 0 #597014, -1px 1px 0 #597014, 1px 1px 0 #597014;
-  background-color:
 }
 
 @media only screen and (max-width: 600px) {
@@ -246,15 +272,16 @@ span {
 
 .deck {
   background: #716F71;
-  padding: 1rem;
+  padding: 1%;
   border-radius: 4px;
   box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
   margin: 0 0 3em;
 }
 
-?
+/*///////////GAME OVER MODAL////////////// */
+
 /*
 .deck .card {
 	height: 3.7rem;
@@ -282,11 +309,6 @@ span {
 }
 
 */
-
-hide {
-  display: none
-}
-
 
 /* .card.match {
 	cursor: default;

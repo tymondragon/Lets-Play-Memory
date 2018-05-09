@@ -5,7 +5,23 @@
 
 $(document).ready(function() {
   M.AutoInit();
-  $('.modal').modal();
+  // $('.modal').modal();
+
+////////////Muh Variables/////////////////////
+
+  let moves = 0
+  let count = 0
+  let second = 0, minute = 0
+  let timer = $("#timer")
+  let interval;
+  let cardChoice = []
+  let cardsArray = $(".card")
+  let deckOfCards = $("#deckOfCards")
+
+////////////Muh Variables/////////////////////
+
+
+
   ////////////////shuffle the cards using the Fisher-Yates shuffle//////
   /////////This is a more effective shuffle than just Math.floor(Math.random) by removing the card as it is shuffled back,starting from the end, into the arrray///////
   ///////////////////////////////////////////////////////
@@ -24,22 +40,13 @@ $(document).ready(function() {
   ////////////////shuffle the cards using the Fisher-Yates shuffle//////
 
 
-  let count = 0
-  let second = 0, minutes = 0
-  let timer = $("#timer")
-  let interval;
-  let cardChoice = []
-  let cardsArray = $(".card")
-  let deckOfCards = $("#deckOfCards")
-  console.log("count is,", count)
-
   /////////////////Timer///////////////////
   function startTimer() {
     interval = setInterval(function() {
-      timer.text(`${minutes} minutes ${second} seconds`)
+      timer.text(`${minute} minutes ${second} seconds`)
       second++;
       if (second == 60) {
-        minutes++;
+        minute++;
         second = 0;
       }
     }, 1000);
@@ -49,9 +56,17 @@ $(document).ready(function() {
 function match(){
   $.map(cardChoice, function(what) {
     $(what).addClass("correct")
-    console.log(count)
   })
   count++
+  moves++
+  if (count === 1){
+    clearInterval(interval);
+  $(cardsArray).off("click")
+  $('#You-Win').modal('open')
+  $("#minutes").text(minute)
+  $("#seconds").text(second)
+  }
+  console.log(moves)
 }
 ////////////////////Match Function///////////////////////////
 
@@ -61,6 +76,8 @@ function match(){
       $(what).children().toggleClass("hide")
       $(what).toggleClass("show")
     })
+    moves ++
+    console.log(moves)
   }
   ///////////////////Do Not Match Function //////////////////////////
 
@@ -84,7 +101,6 @@ function match(){
   function compare(array) {
     if (array[0].id === array[1].id) {
        match(cardChoice)
-      console.log('yay! they match')
       cardChoice = []
     } else {
       doNotMatch(cardChoice)
@@ -115,12 +131,9 @@ function match(){
       }
       event.preventDefault()
     })
-    if (count === 1){
-      console.log("Game Over")
-      clearInterval(interval)
-      timer.text()
-    }
   })
+  // $('#Quit-Game').close();
+  // $('#Quit-Game').open();
 })
 //////////let's get each card into the deck ///////////////////////
 
