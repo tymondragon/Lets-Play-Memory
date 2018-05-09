@@ -21,18 +21,22 @@ $(document).ready(function() {
     }
     return array;
   };
-  /////////////////////////////////////////////////////////
-  /////////////////Timer///////////////////
-  let second = 0,
-    minutes = 0
+  ////////////////shuffle the cards using the Fisher-Yates shuffle//////
+
+
+  let count = 0
+  let second = 0, minutes = 0
   let timer = $("#timer")
   let interval;
   let cardChoice = []
-  // let target = $(event.target)
+  let cardsArray = $(".card")
+  let deckOfCards = $("#deckOfCards")
+  console.log("count is,", count)
 
+  /////////////////Timer///////////////////
   function startTimer() {
     interval = setInterval(function() {
-      timer.text(minutes + " minutes " + second + " seconds")
+      timer.text(`${minutes} minutes ${second} seconds`)
       second++;
       if (second == 60) {
         minutes++;
@@ -40,47 +44,62 @@ $(document).ready(function() {
       }
     }, 1000);
   }
-  /////////////////////////////////////////////////////////
+  /////////////////Timer///////////////////
+////////////////////Match Function///////////////////////////
+function match(){
+  $.map(cardChoice, function(what) {
+    $(what).addClass("correct")
+    console.log(count)
+  })
+  count++
+}
+////////////////////Match Function///////////////////////////
+
+  ///////////////////Do Not Match Function //////////////////////////
+  function doNotMatch() {
+    $.map(cardChoice, function(what) {
+      $(what).children().toggleClass("hide")
+      $(what).toggleClass("show")
+    })
+  }
+  ///////////////////Do Not Match Function //////////////////////////
+
 
   ////////////////////////Picking Two Cards///////////////////////
   function pickPairs(what) {
     $(what).children().toggleClass("hide")
     $(what).toggleClass("show")
-    // $(what).off("click")
     $(what).addClass("chosen")
     cardChoice.push(what)
-    console.log($(what));
     if (cardChoice.length === 2) {
-      if (cardChoice[0].id === cardChoice[1].id) {
-        // match()
-        // cardChoice[0].addClass("correct")
-        // cardChoice[1].addClass("correct")
-        console.log('yay! they match')
-        cardChoice = []
-      } else {
-        // cardChoice.map(what,function(){
-        //   $what.bind("click")
-        // })
-        $.map(cardChoice, function(what) {
-          $(what).children().toggleClass("hide")
-          $(what).toggleClass("show")
-          // $(what).on("click")
-        });
-        // cardChoice.map(wrong ,function(){
-        // let boo = wrong.toggleClass("hide")})
-        console.log("BOOOOO")
-        cardChoice = []
-      }
+      setTimeout(compare, 750, cardChoice)
     }
   }
-  ////////////////////////////////////////////////////
+  ////////////////////////Picking Two Cards///////////////////////
 
+
+  //////////////////CardChoice/////////////////////////////
+  ///////////////////This is to see if the cards match//////////////
+  //////////////////// I know it is bad JU-JU to use an id for more than one element.  But this is the best way for me to identify cards//////////////////////////////////////////////////////////
+  function compare(array) {
+    if (array[0].id === array[1].id) {
+       match(cardChoice)
+      console.log('yay! they match')
+      cardChoice = []
+    } else {
+      doNotMatch(cardChoice)
+      cardChoice = []
+    }
+  }
+  //////////////////CardChoice/////////////////////////////
+
+///////////////////////Game Over//////////////
+
+///////////////////////Game Over//////////////
 
 
 
   //////////let's get each card into the deck ///////////////////////
-  let cardsArray = $(".card")
-  let deckOfCards = $("#deckOfCards")
   ////////////////////////start the game by pressing play!!!!!/////
   $("button").click(function() {
     shuffleDeck(cardsArray)
@@ -90,19 +109,20 @@ $(document).ready(function() {
     }
     $(this).prop("disabled", true);
     startTimer()
-
-    ////////////////////This is to see if the cards match//////////////
-    //////////////////// I know it is bad JU-JU to use an id for more than one element.  But this is the best way for me to identify cards//////////////////////////////////////////////////////////
     $(cardsArray).on("click", function() {
-      if ($(this).children().hasClass("hide")){
-      pickPairs(this)}
+      if ($(this).children().hasClass("hide") && cardChoice.length < 2) {
+        pickPairs(this)
+      }
       event.preventDefault()
     })
+    if (count === 1){
+      console.log("Game Over")
+      clearInterval(interval)
+      timer.text()
+    }
   })
 })
-
-
-
+//////////let's get each card into the deck ///////////////////////
 
 
 

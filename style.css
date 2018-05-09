@@ -104,8 +104,6 @@ header {
 .sidebar-left {
   grid-row: 2/3;
   grid-column: 1 / 2;
-
-
 }
 
 .side {
@@ -160,9 +158,12 @@ header {
   border-color: #F26247;
   font-size: 33px;
 }
-.show .correct {
+
+.correct {
   opacity: 0.5;
-    filter: alpha(opacity=50);
+  border-color: #ffc2b7;
+  background-color: #B8293A;
+  filter: alpha(opacity=50);
 }
 
 /*////////////////////////////////////////////////////  */
@@ -286,9 +287,6 @@ hide {
   display: none
 }
 
-.show {
-  font-size: 33px;
-}
 
 /* .card.match {
 	cursor: default;
