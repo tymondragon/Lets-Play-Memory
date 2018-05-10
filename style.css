@@ -52,7 +52,7 @@ h5 {
 
 #game-background {
   box-sizing: border-box;
-  background-image: url("FontsAndColorsAndImages/Gameplay background.jpg");
+  background-image: url("FontsAndColorsAndImages/Landing Page Image.jpg");
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
@@ -69,6 +69,19 @@ h5 {
 }
 
 /* modal */
+
+.modal-quit-font {
+  font-size: 22px;
+}
+
+#autocomplete-input {
+  font-size: 29px;
+  color: #ffe727;
+}
+
+.modal-index {
+  font-size: 25px;
+}
 
 .modal-background {
   background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
@@ -157,13 +170,16 @@ aside {
 /* ///////////////The Card States//////////////// */
 
 .card {
-  box-shadow: 3px 3px;
+  box-shadow: 3px 4px 5px 0px;
   margin: auto;
   padding: 5%;
 }
-
 .background-style {
-  background-image: radial-gradient(#af9946 20%, transparent 0), radial-gradient(#af9946 20%, transparent 0);
+  background-color: #e1e645;
+  background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  /* background-image: radial-gradient(#af9946 20%, transparent 0), radial-gradient(#af9946 20%, transparent 0); */
 }
 
 .card-back {
@@ -171,11 +187,9 @@ aside {
   background-size: 30px 30px;
   background-position: 0 0, 15px 15px;
   background-color: #e0cc38;
-  border-style: ridge;
-  border-color: black;
   border-radius: 9%;
   align-self: center;
-  height: 95%;
+  height: 90%;
   width: 100%;
 }
 
@@ -187,10 +201,10 @@ aside {
   justify-content: center;
   align-content: space-evenly;
   margin: auto;
-  background-color: #73b142;
+  background-color: #fff5ae;
   border-style: solid;
   border-radius: 5%;
-  border-color: #3a6518;
+  border-color: #adbf4d85;
   font-size: 60px;
   align-self: center;
 }
@@ -299,13 +313,10 @@ span {
 }
 
 .deck {
-  background: #c5445b;
+  background: #c15a46;
   padding: 1%;
-  border-style: inset;
-  border-color: #1f202317;
-  border-radius: 4px;
-  box-shadow: 8px 9px 26px 0 rgba(117, 47, 80, 0.43);
-  /* justify-content: space-around; */
+  border-radius: 5px;
+  box-shadow: inset -2px 0px 26px 0px rgba(117, 47, 80, 0.43);
   align-items: center;
   margin: 0 0 3em;
 }
@@ -316,9 +327,8 @@ footer div button h6 {
 }
 
 .btn {
-  border-style: solid;
   border-width: 2px;
-  border-color: #5e7414;
   background-color: #72b041;
   height: 50px;
+  box-shadow: inset 0px 1px 20px 0px;
 }

@@ -5,7 +5,8 @@
 
 $(document).ready(function() {
   M.AutoInit();
-  // $('.modal').modal();
+  $('.modal').modal({
+      dismissible: false });
 
   ////////////Muh Variables/////////////////////
 
@@ -46,7 +47,7 @@ $(document).ready(function() {
     minute: 0,
     start: function() {
       this.interval = setInterval(function() {
-        timer.text(`${clock.minute} minutes ${clock.second} seconds`)
+        timer.text(`${clock.minute} Minutes ${clock.second} Seconds`)
         clock.second++;
         if (clock.second == 60) {
           clock.minute++;

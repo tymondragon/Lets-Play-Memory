@@ -17,11 +17,13 @@
 
   <div class="grid-body">
     <header>
-      <div class="time-count">
-        <h5 class=""><span class="timer">Time</span></h5>
-        <h6 class=""> <span id="timer" class="modal-font"> 0 Minutes 0 Seconds</span> </h6>
+      <div class="row">
+        <div class="col s12 md6 time-count">
+          <h5 class=""><span class="timer">Time</span></h5>
+          <h6 class=""> <span id="timer" class="modal-font"> 0 Minutes 0 Seconds</span> </h6>
+        </div>
       </div>
-      <div class="move-count">
+      <div class="col s12 md6 move-count">
         <h5 class=""><span class="timer">Moves</span></h5>
         <h6 class=""> <span id='moves' class="modal-font">0 Moves</span> </h6>
       </div>
@@ -86,30 +88,29 @@
       <div id="You-Win" class="modal modal-background">
         <div class="modal-content">
           <h4 class="modal-font">Congratulations!</h4>
-          <p class="modal-font">You finished the game in <span id="modal-minutes" class = 'modal-font'></span> minutes <span id="modal-seconds" class = 'modal-font'></span> seconds in <span id="modal-moves" class = 'modal-font'></span> moves.  Memory harder next time!</p>
+          <p class="modal-font">You finished the game in <span id="modal-minutes" class='modal-font'></span> minutes <span id="modal-seconds" class='modal-font'></span> seconds in <span id="modal-moves" class='modal-font'></span> moves. Memory harder next time!</p>
 
 
           <a href="game.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Play Again?</a>
           <a href="index.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Quit?</a>
         </div>
       </div>
-<!-- Quit Modal -->
+      <!-- Quit Modal -->
       <div id="Quit-Game" class="modal modal-background">
         <div class="modal-content">
           <h4>Paused</h4>
-          <p class=modal-font>Are you sure you want to quit? </p>
-          <a id="yes" href="index.html" class="modal-close waves-effect waves-green btn-flat modal-font">Yes</a>
-          <a  id="no" class="modal-close waves-effect waves-green btn-flat modal-font">No</a>
+          <p class="modal-font modal-quit-font">Are you sure you want to quit? </p>
+          <a id="yes" href="index.html" class="modal-close waves-effect waves-green btn-flat modal-font modal-quit-font">Yes</a>
+          <a id="no" class="modal-close waves-effect waves-green btn-flat modal-font modal-quit-font">No</a>
         </div>
       </div>
 
-<!--  -->
+      <!--  -->
     </article>
 
     <footer>
       <div>
-        <button type="button"
-        class="btn" name="play" id="lets-play"> <h6>Play</h6> </button>
+        <button type="button" class="btn" name="play" id="lets-play"> <h6>Start</h6> </button>
       </div>
       <div>
         <button type="button" name="play" id="quit" data-target="Quit-Game" class="btn modal-trigger">
