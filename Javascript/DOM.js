@@ -1,13 +1,20 @@
 // let Tile = require('./main.js');
 
 
-
-
+// See your best time by giving us your name
+// game.html
 $(document).ready(function() {
   M.AutoInit();
   $('.modal').modal({
-      dismissible: false });
-
+    dismissible: false
+  });
+  // $("#formValidate").validate({
+  //   rules: {
+  //     uname: {
+  //       required: true
+  //     }
+  //   }
+  // })
   ////////////Muh Variables/////////////////////
 
   let moves = 0
@@ -75,7 +82,7 @@ $(document).ready(function() {
     count++
     moves++
     $("#moves").text(`${moves} Moves`)
-    if (count === 2) {
+    if (count === 8) {
       clearInterval(interval);
       $(cardsArray).off("click")
       $('#You-Win').modal('open')
@@ -155,9 +162,10 @@ $(document).ready(function() {
   $("#quit").click(function() {
     clock.pause()
   })
-  $("#no").click(function(){
-    if (clock.second > 0){
-    clock.resume()}
+  $("#no").click(function() {
+    if (clock.second > 0) {
+      clock.resume()
+    }
   })
 })
 //////////let's get each card into the deck ///////////////////////
