@@ -5,6 +5,7 @@
   <link href="https://fonts.googleapis.com/css?family=Monoton|Press+Start+2P" rel="stylesheet">
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8">
@@ -85,12 +86,19 @@
         </div>
       </div>
       <!-- Finish Modal -->
-      <div id="You-Win" class="modal modal-background">
+      <div id="nice-try" class="modal modal-background">
         <div class="modal-content">
-          <h4 class="modal-font">Congratulations!</h4>
-          <p class="modal-font">You finished the game in <span id="modal-minutes" class='modal-font'></span> minutes <span id="modal-seconds" class='modal-font'></span> seconds in <span id="modal-moves" class='modal-font'></span> moves. Memory harder next time!</p>
-
-
+          <h4 class="modal-font">Mmmmmmm.</h4>
+          <p class="modal-font">You finished the game in <span id="modal-minutes" class='modal-font'></span> minutes <span id="modal-seconds" class='modal-font'></span> seconds and in <span id="modal-moves" class='modal-font'></span> moves. It's not the best time. Memory harder
+            next time!</p>
+          <a href="game.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Play Again?</a>
+          <a href="index.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Quit?</a>
+        </div>
+      </div>
+      <div id="good-job" class="modal modal-background">
+        <div class="modal-content">
+          <h4 class="modal-font">Awesome!!!</h4>
+          <p class="modal-font">You finished the game in <span id="best-minutes" class='modal-font'></span> minutes <span id="best-seconds" class='modal-font'></span> seconds and in <span id="best-moves" class='modal-font'></span> moves. You have the new best time!</p>
           <a href="game.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Play Again?</a>
           <a href="index.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Quit?</a>
         </div>

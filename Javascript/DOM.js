@@ -1,5 +1,10 @@
+// let bestTime = {
+//   name: "",
+//   minute: 0,
+//   second: 0,
+//   moves: 0
+// }
 // let Tile = require('./main.js');
-
 
 // See your best time by giving us your name
 // game.html
@@ -8,6 +13,13 @@ $(document).ready(function() {
   $('.modal').modal({
     dismissible: false
   });
+
+  bestTime = JSON.parse(localStorage.getItem('bestTime')) || {
+    name: "",
+    minute: 5,
+    second: 50
+  }
+  console.log(bestTime)
   // $("#formValidate").validate({
   //   rules: {
   //     uname: {
@@ -25,6 +37,8 @@ $(document).ready(function() {
   let cardChoice = []
   let cardsArray = $(".card")
   let deckOfCards = $("#deckOfCards")
+
+
 
   ////////////Muh Variables/////////////////////
 
@@ -77,19 +91,13 @@ $(document).ready(function() {
   ////////////////////Match Function///////////////////////////
   function match() {
     $.map(cardChoice, function(what) {
-      $(what).addClass("correct")
+      $(what).addClass("correct animated rubberBand")
     })
     count++
     moves++
     $("#moves").text(`${moves} Moves`)
-    if (count === 8) {
-      clearInterval(interval);
-      $(cardsArray).off("click")
-      $('#You-Win').modal('open')
-      $("#modal-minutes").text(`${clock.minute}`)
-      $("#modal-seconds").text(`${clock.second}`)
-      $("#modal-moves").text(`${moves}`)
-    }
+    finish(count)
+
   }
   ////////////////////Match Function///////////////////////////
 
@@ -97,8 +105,8 @@ $(document).ready(function() {
   function doNotMatch() {
     $.map(cardChoice, function(what) {
       $(what).children().toggleClass("hide")
-      $(what).toggleClass("show")
-      $(what).toggleClass("background-style")
+      // $(what).toggleClass("show")
+      $(what).toggleClass("background-style show")
 
     })
     moves++
@@ -137,13 +145,38 @@ $(document).ready(function() {
   //////////////////CardChoice/////////////////////////////
 
   ///////////////////////Game Over//////////////
-
+  function finish() {
+    if (count === 8) {
+      clearInterval(interval);
+      $(cardsArray).off("click")
+      setTimeout(function() {
+        console.log(bestTime.second, clock.second)
+        if (clock.minute < bestTime.minute) {
+          if (clock.second < bestTime.second) {
+            bestTime.second = clock.second
+            bestTime.minute = clock.minute
+            $('#good-job').modal('open')
+            $("#best-minutes").text(`${clock.minute}`)
+            $("#best-seconds").text(`${clock.second}`)
+            $("#best-moves").text(`${moves}`)
+            localStorage.setItem("bestTime", JSON.stringify(bestTime))
+          }
+        } else {
+          $('#nice-try').modal('open')
+          $("#modal-minutes").text(`${clock.minute}`)
+          $("#modal-seconds").text(`${clock.second}`)
+          $("#modal-moves").text(`${moves}`)
+        }
+      }, 1000)
+    }
+  }
   ///////////////////////Game Over//////////////
 
 
 
   //////////let's get each card into the deck ///////////////////////
   ////////////////////////start the game by pressing play!!!!!/////
+  // localStorage.setItem("best", JSON.stringify(best))
   $("#lets-play").click(function() {
     shuffleDeck(cardsArray)
     deckOfCards.empty()
@@ -159,6 +192,7 @@ $(document).ready(function() {
       event.preventDefault()
     })
   })
+
   $("#quit").click(function() {
     clock.pause()
   })

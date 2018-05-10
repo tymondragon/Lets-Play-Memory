@@ -5,7 +5,7 @@
 }
 
 #strobe {
-  color: #597014;
+  color: #C7C12E;
   animation: strobe 700ms steps(1, end) infinite;
   transition: flex .3s;
 }
