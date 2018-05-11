@@ -313,13 +313,16 @@ span {
 }
 
 .deck {
-  background: #c15a46;
+  background: #ec2045;
   padding: 1%;
-  border-radius: 5px;
+  border-radius: 14px;
   box-shadow: inset -2px 0px 26px 0px rgba(117, 47, 80, 0.43);
   align-items: center;
   margin: 0 0 3em;
+  border-style:  solid;
+  border-color: #32353580;
 }
+
 
 footer div button h6 {
   font-size: 25px;
