@@ -1,13 +1,4 @@
-// let bestTime = {
-//   name: "",
-//   minute: 0,
-//   second: 0,
-//   moves: 0
-// }
-// let Tile = require('./main.js');
 
-// See your best time by giving us your name
-// game.html
 $(document).ready(function() {
   M.AutoInit();
   $('.modal').modal({
@@ -19,16 +10,6 @@ $(document).ready(function() {
     minute: 5,
     second: 50
   }
-  console.log(bestTime)
-  // $("#formValidate").validate({
-  //   rules: {
-  //     uname: {
-  //       required: true
-  //     }
-  //   }
-  // })
-  ////////////Muh Variables/////////////////////
-
   let moves = 0
   let count = 0
   // let second = 0, minute = 0
@@ -38,11 +19,7 @@ $(document).ready(function() {
   let cardsArray = $(".card")
   let deckOfCards = $("#deckOfCards")
 
-
-
-  ////////////Muh Variables/////////////////////
-
-
+////////////Muh Variables/////////////////////
 
   ////////////////shuffle the cards using the Fisher-Yates shuffle//////
   /////////This is a more effective shuffle than just Math.floor(Math.random) by removing the card as it is shuffled back,starting from the end, into the arrray///////
@@ -60,7 +37,6 @@ $(document).ready(function() {
     return array;
   };
   ////////////////shuffle the cards using the Fisher-Yates shuffle//////
-
 
   /////////////////Timer///////////////////
   let clock = {
@@ -147,11 +123,11 @@ $(document).ready(function() {
   ///////////////////////Game Over//////////////
   function finish() {
     if (count === 8) {
-      clearInterval(interval);
+      console.log(bestTime.second, clock.second)
+      clearInterval(clock.interval);
       $(cardsArray).off("click")
       setTimeout(function() {
-        console.log(bestTime.second, clock.second)
-        if (clock.minute < bestTime.minute) {
+        if (clock.minute <= bestTime.minute ) {
           if (clock.second < bestTime.second) {
             bestTime.second = clock.second
             bestTime.minute = clock.minute
@@ -161,7 +137,14 @@ $(document).ready(function() {
             $("#best-moves").text(`${moves}`)
             localStorage.setItem("bestTime", JSON.stringify(bestTime))
           }
-        } else {
+          else {
+           $('#nice-try').modal('open')
+           $("#modal-minutes").text(`${clock.minute}`)
+           $("#modal-seconds").text(`${clock.second}`)
+           $("#modal-moves").text(`${moves}`)
+         }
+        }
+         else {
           $('#nice-try').modal('open')
           $("#modal-minutes").text(`${clock.minute}`)
           $("#modal-seconds").text(`${clock.second}`)
@@ -171,8 +154,6 @@ $(document).ready(function() {
     }
   }
   ///////////////////////Game Over//////////////
-
-
 
   //////////let's get each card into the deck ///////////////////////
   ////////////////////////start the game by pressing play!!!!!/////
@@ -208,7 +189,7 @@ $(document).ready(function() {
 
 
 
-///////////////////////////SAVE AND USE////////////////
+///////////////////////////SAVE AND USE LATER////////////////
 ////loop to create instances of cards with a position on grid///
 // $("button").click(function() {
 //    $(this).prop("disabled",true);
@@ -244,8 +225,3 @@ $(document).ready(function() {
 //   }
 // })
 ////////////////////////////////API///////////////////////////////
-// $('.image').click(function() {
-//   alert("hello")
-//   event.preventDefault()
-//   })
-// })
