@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   M.AutoInit();
   $('.modal').modal({
@@ -19,7 +18,7 @@ $(document).ready(function() {
   let cardsArray = $(".card")
   let deckOfCards = $("#deckOfCards")
 
-////////////Muh Variables/////////////////////
+  ////////////Muh Variables/////////////////////
 
   ////////////////shuffle the cards using the Fisher-Yates shuffle//////
   /////////This is a more effective shuffle than just Math.floor(Math.random) by removing the card as it is shuffled back,starting from the end, into the arrray///////
@@ -119,6 +118,25 @@ $(document).ready(function() {
     }
   }
   //////////////////CardChoice/////////////////////////////
+  /////////You Win modal///////////////////////////////
+  function youWin() {
+    $('#good-job').modal('open')
+    $("#best-minutes").text(`${clock.minute}`)
+    $("#best-seconds").text(`${clock.second}`)
+    $("#best-moves").text(`${moves}`)
+    localStorage.setItem("bestTime", JSON.stringify(bestTime))
+  }
+  ////////////////////////////////////////////////////
+
+  /////////Nice Try modal///////////////////////////////
+  function niceTry() {
+    $('#nice-try').modal('open')
+    $("#modal-minutes").text(`${clock.minute}`)
+    $("#modal-seconds").text(`${clock.second}`)
+    $("#modal-moves").text(`${moves}`)
+  }
+  ////////////////////////////////////////////////////
+
 
   ///////////////////////Game Over//////////////
   function finish() {
@@ -127,28 +145,16 @@ $(document).ready(function() {
       clearInterval(clock.interval);
       $(cardsArray).off("click")
       setTimeout(function() {
-        if (clock.minute <= bestTime.minute ) {
+        if (clock.minute <= bestTime.minute) {
           if (clock.second < bestTime.second) {
             bestTime.second = clock.second
             bestTime.minute = clock.minute
-            $('#good-job').modal('open')
-            $("#best-minutes").text(`${clock.minute}`)
-            $("#best-seconds").text(`${clock.second}`)
-            $("#best-moves").text(`${moves}`)
-            localStorage.setItem("bestTime", JSON.stringify(bestTime))
+            youWin()
+          } else {
+            niceTry()
           }
-          else {
-           $('#nice-try').modal('open')
-           $("#modal-minutes").text(`${clock.minute}`)
-           $("#modal-seconds").text(`${clock.second}`)
-           $("#modal-moves").text(`${moves}`)
-         }
-        }
-         else {
-          $('#nice-try').modal('open')
-          $("#modal-minutes").text(`${clock.minute}`)
-          $("#modal-seconds").text(`${clock.second}`)
-          $("#modal-moves").text(`${moves}`)
+        } else {
+          niceTry()
         }
       }, 1000)
     }
