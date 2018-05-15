@@ -43,7 +43,7 @@ $(document).ready(function() {
     minute: 0,
     start: function() {
       this.interval = setInterval(function() {
-        timer.text(`${clock.minute} Minutes ${clock.second} Seconds`)
+        timer.text(`Minutes ${clock.minute} Seconds ${clock.second}`)
         clock.second++;
         if (clock.second == 60) {
           clock.minute++;
@@ -70,7 +70,7 @@ $(document).ready(function() {
     })
     count++
     moves++
-    $("#moves").text(`${moves} Moves`)
+    $("#moves").text(`Moves ${moves}`)
     finish(count)
 
   }
