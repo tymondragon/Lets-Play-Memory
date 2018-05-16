@@ -149,7 +149,7 @@ $(document).ready(function() {
 
   ///////////////////////Game Over//////////////
   function finish() {
-    if (count === 1) {
+    if (count === 16) {
       console.log(bestTime.timeSecond, clock.timeSecond)
       clearInterval(clock.interval);
       $(cardsArray).off("click")

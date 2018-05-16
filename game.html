@@ -4,12 +4,12 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Monoton|Press+Start+2P" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8">
-  <script defer src="https://use.fontawesome.com/releases/v5.0.12/js/all.js" integrity="sha384-Voup2lBiiyZYkRto2XWqbzxHXwzcm4A5RfdfG6466bu5LqjwwrjXCMBQBLMWh7qR" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <title>The Game Memory</title>
 </head>
@@ -17,27 +17,25 @@
 <body id="game-background" class="container">
 
 
-  <div class="row">
-    <div class="col s12 m4 offset-m4">
+  <header class="row top">
+    <div class="col s12 m4 offset-m5">
       <div class="card-panel best-time">
         <h5 class=""><span class="timer flow-text">Best Time</span></h5>
         <span id="best" class="modal-font modal-font"></span>
       </div>
     </div>
-  </div>
-  <div class="row">
+  </header>
+  <div class="row game-row">
     <div class="col s12 m2">
       <div class="row">
-        <div class="col s12 m12">
-          <div class="card-panel time-count">
+        <div class="col s6 m12">
+          <div class="card-panel cards time-count">
             <h5 class=""><span class="timer">Time</span></h5>
             <h6 class=""> <span id="timer" class="modal-font"> Minutes 0 Seconds 0</span> </h6>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col s12 m12">
-          <div class="card-panel move-count">
+        <div class="col s6 m12">
+          <div class="card-panel cards move-count">
             <h5 class=""><span class="timer">Moves</span></h5>
             <h6 class=""> <span id='moves' class="modal-font">0</span> </h6>
           </div>
@@ -45,136 +43,147 @@
       </div>
     </div>
     <div class="col s12 m10">
-      <div id="deckOfCards" class="game-board deck">
-        <div id="flask" class="background-style card card-back">
-          <i class="fas fa-flask hide"></i>
+      <div id="deckOfCards" class="row game-board deck">
+        <div id="flask" class="col 2 background-style card card-back">
+          <i class="fas fa-flask responsive-img hide"></i>
         </div>
-        <div id="bullseye" class="background-style card card-back">
-          <i class="fas fa-bullseye hide"></i>
+        <div id="flask" class="col 2 background-style card card-back">
+          <i class="fas fa-flask responsive-img hide"></i>
         </div>
-        <div id="bullseye" class="background-style card card-back">
-          <i class="fas fa-bullseye hide"></i>
+        <div id="bullseye" class="col 2 background-style card card-back">
+          <i class="fas fa-bullseye responsive-img hide"></i>
         </div>
-        <div id="flask" class="background-style card card-back">
-          <i class="fas fa-flask hide"></i>
+        <div id="bullseye" class="col 2 background-style card card-back">
+          <i class="fas fa-bullseye responsive-img hide"></i>
         </div>
-        <div id="gravity" class="background-style card card-back">
-          <i class="fab fa-grav hide"></i>
+        <div id="gravity" class="col 2 background-style card card-back">
+          <i class="fab fa-grav responsive-img hide"></i>
         </div>
-        <div id="diagnoses" class="background-style card card-back">
-          <i class="fas fa-diagnoses hide"></i>
+        <div id="gravity" class="col 2 background-style card card-back">
+          <i class="fab fa-grav responsive-img hide"></i>
         </div>
-        <div id="dna" class="background-style card card-back">
-          <i class="fas fa-dna hide"></i>
+        <div id="diagnoses" class="col 2 background-style card card-back">
+          <i class="fas fa-diagnoses responsive-img hide"></i>
         </div>
-        <div id="diagnoses" class="background-style card card-back">
-          <i class="fas fa-diagnoses hide"></i>
+        <div id="diagnoses" class="col 2 background-style card card-back">
+          <i class="fas fa-diagnoses responsive-img hide"></i>
         </div>
-        <div id="gravity" class="background-style card card-back">
-          <i class="fab fa-grav hide"></i>
+        <div id="dna" class="col 2 background-style card card-back">
+          <i class="fas fa-dna responsive-img hide"></i>
         </div>
-        <div id="dna" class="background-style card card-back">
-          <i class="fas fa-dna hide"></i>
+        <div id="dna" class="col 2 background-style card card-back">
+          <i class="fas fa-dna responsive-img hide"></i>
         </div>
-        <div id="jet" class="background-style card card-back">
-          <i class="fas fa-fighter-jet hide"></i>
+        <div id="jet" class="col 2 background-style card card-back">
+          <i class="fas fa-fighter-jet responsive-img hide"></i>
         </div>
-        <div id="swine" class="background-style card card-back">
-          <i class="fab fa-grunt hide"></i>
+        <div id="jet" class="col 2 background-style card card-back">
+          <i class="fas fa-fighter-jet responsive-img hide"></i>
         </div>
-        <div id="sun" class="background-style card card-back">
-          <i class="fas fa-sun hide"></i>
+        <div id="sun" class="col 2 background-style card card-back">
+          <i class="fas fa-sun responsive-img hide"></i>
         </div>
-        <div id="jet" class="background-style card card-back">
-          <i class="fas fa-fighter-jet hide"></i>
+        <div id="sun" class="col 2 background-style card card-back">
+          <i class="fas fa-sun responsive-img hide"></i>
         </div>
-        <div id="sun" class="background-style card card-back">
-          <i class="fas fa-sun hide"></i>
+        <div id="bowling-ball" class="col 2 background-style card card-back">
+          <i class="fas fa-bowling-ball responsive-img hide"></i>
         </div>
-        <div id="swine" class="background-style card card-back">
-          <i class="fab fa-grunt hide"></i>
+        <div id="bowling-ball" class="col 2 background-style card card-back">
+          <i class="fas fa-bowling-ball responsive-img hide"></i>
         </div>
-        <div id="flask" class="background-style card card-back">
-          <i class="fas fa-flask hide"></i>
+        <div id="bug" class="col 2 background-style card card-back">
+          <i class="fas fa-bug responsive-img hide"></i>
         </div>
-        <div id="bullseye" class="background-style card card-back">
-          <i class="fas fa-bullseye hide"></i>
+        <div id="bug" class="col 2 background-style card card-back">
+          <i class="fas fa-bug responsive-img hide"></i>
         </div>
-        <div id="bullseye" class="background-style card card-back">
-          <i class="fas fa-bullseye hide"></i>
+        <div id="pill" class="col 2 background-style card card-back">
+          <i class="fas fa-capsules responsive-img hide"></i>
         </div>
-        <div id="flask" class="background-style card card-back">
-          <i class="fas fa-flask hide"></i>
+        <div id="pill" class="col 2 background-style card card-back">
+          <i class="fas fa-capsules responsive-img hide"></i>
         </div>
-        <div id="gravity" class="background-style card card-back">
-          <i class="fab fa-grav hide"></i>
+        <div id="bomb" class="col 2 background-style card card-back">
+          <i class="fas fa-bomb responsive-img hide"></i>
         </div>
-        <div id="diagnoses" class="background-style card card-back">
-          <i class="fas fa-diagnoses hide"></i>
+        <div id="bomb" class="col 2 background-style card card-back">
+          <i class="fas fa-bomb responsive-img hide"></i>
         </div>
-        <div id="dna" class="background-style card card-back">
-          <i class="fas fa-dna hide"></i>
+        <div id="burn" class="col 2 background-style card card-back">
+          <i class="fas fa-burn responsive-img hide"></i>
         </div>
-        <div id="diagnoses" class="background-style card card-back">
-          <i class="fas fa-diagnoses hide"></i>
+        <div id="burn" class="col 2 background-style card card-back">
+          <i class="fas fa-burn responsive-img hide"></i>
         </div>
-        <div id="gravity" class="background-style card card-back">
-          <i class="fab fa-grav hide"></i>
+        <div id="bullhorn" class="col 2 background-style card card-back">
+          <i class="fas fa-bullhorn responsive-img hide"></i>
         </div>
-        <div id="dna" class="background-style card card-back">
-          <i class="fas fa-dna hide"></i>
+        <div id="bullhorn" class="col 2 background-style card card-back">
+          <i class="fas fa-bullhorn responsive-img hide"></i>
         </div>
-        <div id="jet" class="background-style card card-back">
-          <i class="fas fa-fighter-jet hide"></i>
+        <div id="compact-disc" class="col 2 background-style card card-back">
+          <i class="fas fa-compact-disc responsive-img hide"></i>
         </div>
-        <div id="swine" class="background-style card card-back">
-          <i class="fab fa-grunt hide"></i>
+        <div id="compact-disc" class="col 2 background-style card card-back">
+          <i class="fas fa-compact-disc responsive-img hide"></i>
         </div>
-        <div id="sun" class="background-style card card-back">
-          <i class="fas fa-sun hide"></i>
+        <div id="coffee" class="col 2 background-style card card-back">
+          <i class="fas fa-coffee responsive-img hide"></i>
         </div>
-        <div id="jet" class="background-style card card-back">
-          <i class="fas fa-fighter-jet hide"></i>
+        <div id="coffee" class="col 2 background-style card card-back">
+          <i class="fas fa-coffee responsive-img hide"></i>
         </div>
-        <div id="sun" class="background-style card card-back">
-          <i class="fas fa-sun hide"></i>
+        <div id="crow" class="col 2 background-style card card-back">
+          <i class="fas fa-crow responsive-img hide"></i>
         </div>
-        <div id="swine" class="background-style card card-back">
-          <i class="fab fa-grunt hide"></i>
+        <div id="crow" class="col 2 background-style card card-back">
+          <i class="fas fa-frog responsive-img hide"></i>
+        </div>
+        <div id="frog" class="col 2 background-style card card-back">
+          <i class="fas fa-crow responsive-img hide"></i>
+        </div>
+        <div id="frog" class="col 2 background-style card card-back">
+          <i class="fas fa-frog responsive-img hide"></i>
+        </div>
+        <div id="glasses" class="col 2 background-style card card-back">
+          <i class="fas fa-glasses responsive-img hide"></i>
+        </div>
+        <div id="glasses" class="col 2 background-style card card-back">
+          <i class="fas fa-glasses responsive-img hide"></i>
         </div>
       </div>
     </div>
-  </div>
 
 
-  <!-- Finish Modal -->
-  <div id="nice-try" class="modal modal-background">
-    <div class="modal-content">
-      <h4 class="modal-font">Mmmmmmm.</h4>
-      <p class="modal-font">You finished the game in <span id="modal-minutes" class='modal-font'></span> minutes <span id="modal-seconds" class='modal-font'></span> seconds and in <span id="modal-moves" class='modal-font'></span> moves. It's not the best time. Memory harder
-        next time!</p>
-      <a href="game.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Play Again?</a>
-      <a href="index.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Quit?</a>
+    <!-- Finish Modal -->
+    <div id="nice-try" class="modal modal-background">
+      <div class="modal-content">
+        <h4 class="modal-font">Mmmmmmm.</h4>
+        <p class="modal-font">You finished the game in <span id="modal-minutes" class='modal-font'></span> minutes <span id="modal-seconds" class='modal-font'></span> seconds and in <span id="modal-moves" class='modal-font'></span> moves. It's not the best time. Memory harder
+          next time!</p>
+        <a href="game.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Play Again?</a>
+        <a href="index.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Quit?</a>
+      </div>
     </div>
-  </div>
-  <!-- Good Job Modal -->
-  <div id="good-job" class="modal modal-background">
-    <div class="modal-content">
-      <h4 class="modal-font">Awesome!!!</h4>
-      <p class="modal-font">You finished the game in <span id="best-minutes" class='modal-font'></span> minutes <span id="best-seconds" class='modal-font'></span> seconds and in <span id="best-moves" class='modal-font'></span> moves. You have the new best time!</p>
-      <a href="game.html" id="play-again" class="modal-close waves-effect waves-green btn-flat modal-font">Play Again?</a>
-      <a href="index.html" id="quit_game" class="modal-close waves-effect waves-green btn-flat modal-font">Quit?</a>
+    <!-- Good Job Modal -->
+    <div id="good-job" class="modal modal-background">
+      <div class="modal-content">
+        <h4 class="modal-font">Awesome!!!</h4>
+        <p class="modal-font">You finished the game in <span id="best-minutes" class='modal-font'></span> minutes <span id="best-seconds" class='modal-font'></span> seconds and in <span id="best-moves" class='modal-font'></span> moves. You have the new best time!</p>
+        <a href="game.html" id="play-again" class="modal-close waves-effect waves-green btn-flat modal-font">Play Again?</a>
+        <a href="index.html" id="quit_game" class="modal-close waves-effect waves-green btn-flat modal-font">Quit?</a>
+      </div>
     </div>
-  </div>
-  <!-- Quit Modal -->
-  <div id="Quit-Game" class="modal modal-background">
-    <div class="modal-content">
-      <h4>Paused</h4>
-      <p class="modal-font modal-quit-font">Do you want to quit the game? </p>
-      <a id="yes" href="index.html" class="modal-close waves-effect waves-green btn-flat modal-font modal-quit-font">Yes</a>
-      <a id="no" class="modal-close waves-effect waves-green btn-flat modal-font modal-quit-font">No</a>
+    <!-- Quit Modal -->
+    <div id="Quit-Game" class="modal modal-background">
+      <div class="modal-content">
+        <h4>Paused</h4>
+        <p class="modal-font modal-quit-font">Do you want to quit the game? </p>
+        <a id="yes" href="index.html" class="modal-close waves-effect waves-green btn-flat modal-font modal-quit-font">Yes</a>
+        <a id="no" class="modal-close waves-effect waves-green btn-flat modal-font modal-quit-font">No</a>
+      </div>
     </div>
-  </div>
   </div>
   </div>
   <div class="row">
