@@ -3,7 +3,7 @@
 
 <head>
   <link href="https://fonts.googleapis.com/css?family=Monoton|Press+Start+2P" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
@@ -17,22 +17,16 @@
 <body id="game-background" class="container">
 
 
-<div class="row">
-<div class="col s12">
-  <h5 class=""><span class="timer flow-text">Best Time</span></h5>
-  <span id="best" class="modal-font flow-text">You Have Not Set A Best Time Yet!</span>
-</div>
-</div>
+  <div class="row">
+    <div class="col s12 m4 offset-m4">
+      <div class="card-panel best-time">
+        <h5 class=""><span class="timer flow-text">Best Time</span></h5>
+        <span id="best" class="modal-font modal-font"></span>
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col s12 m2">
-      <!-- <div class="row">
-        <div class="col s12 m12">
-          <div class="card-panel best-time">
-            <h5 class=""><span class="timer flow-text">Best Time</span></h5>
-            <h6 class=""> <span id="best" class="modal-font flow-text">You Have Not Set A Best Time Yet!</span> </h6>
-          </div>
-        </div>
-      </div> -->
       <div class="row">
         <div class="col s12 m12">
           <div class="card-panel time-count">
@@ -50,141 +44,142 @@
         </div>
       </div>
     </div>
-      <div class="col s12 m10">
-        <div id="deckOfCards" class="game-board deck">
-          <div id="flask" class="background-style card card-back">
-            <i class="fas fa-flask hide"></i>
-          </div>
-          <div id="bullseye" class="background-style card card-back">
-            <i class="fas fa-bullseye hide"></i>
-          </div>
-          <div id="bullseye" class="background-style card card-back">
-            <i class="fas fa-bullseye hide"></i>
-          </div>
-          <div id="flask" class="background-style card card-back">
-            <i class="fas fa-flask hide"></i>
-          </div>
-          <div id="gravity" class="background-style card card-back">
-            <i class="fab fa-grav hide"></i>
-          </div>
-          <div id="diagnoses" class="background-style card card-back">
-            <i class="fas fa-diagnoses hide"></i>
-          </div>
-          <div id="dna" class="background-style card card-back">
-            <i class="fas fa-dna hide"></i>
-          </div>
-          <div id="diagnoses" class="background-style card card-back">
-            <i class="fas fa-diagnoses hide"></i>
-          </div>
-          <div id="gravity" class="background-style card card-back">
-            <i class="fab fa-grav hide"></i>
-          </div>
-          <div id="dna" class="background-style card card-back">
-            <i class="fas fa-dna hide"></i>
-          </div>
-          <div id="jet" class="background-style card card-back">
-            <i class="fas fa-fighter-jet hide"></i>
-          </div>
-          <div id="swine" class="background-style card card-back">
-            <i class="fab fa-grunt hide"></i>
-          </div>
-          <div id="sun" class="background-style card card-back">
-            <i class="fas fa-sun hide"></i>
-          </div>
-          <div id="jet" class="background-style card card-back">
-            <i class="fas fa-fighter-jet hide"></i>
-          </div>
-          <div id="sun" class="background-style card card-back">
-            <i class="fas fa-sun hide"></i>
-          </div>
-          <div id="swine" class="background-style card card-back">
-            <i class="fab fa-grunt hide"></i>
-          </div>
-          <div id="flask" class="background-style card card-back">
-            <i class="fas fa-flask hide"></i>
-          </div>
-          <div id="bullseye" class="background-style card card-back">
-            <i class="fas fa-bullseye hide"></i>
-          </div>
-          <div id="bullseye" class="background-style card card-back">
-            <i class="fas fa-bullseye hide"></i>
-          </div>
-          <div id="flask" class="background-style card card-back">
-            <i class="fas fa-flask hide"></i>
-          </div>
-          <div id="gravity" class="background-style card card-back">
-            <i class="fab fa-grav hide"></i>
-          </div>
-          <div id="diagnoses" class="background-style card card-back">
-            <i class="fas fa-diagnoses hide"></i>
-          </div>
-          <div id="dna" class="background-style card card-back">
-            <i class="fas fa-dna hide"></i>
-          </div>
-          <div id="diagnoses" class="background-style card card-back">
-            <i class="fas fa-diagnoses hide"></i>
-          </div>
-          <div id="gravity" class="background-style card card-back">
-            <i class="fab fa-grav hide"></i>
-          </div>
-          <div id="dna" class="background-style card card-back">
-            <i class="fas fa-dna hide"></i>
-          </div>
-          <div id="jet" class="background-style card card-back">
-            <i class="fas fa-fighter-jet hide"></i>
-          </div>
-          <div id="swine" class="background-style card card-back">
-            <i class="fab fa-grunt hide"></i>
-          </div>
-          <div id="sun" class="background-style card card-back">
-            <i class="fas fa-sun hide"></i>
-          </div>
-          <div id="jet" class="background-style card card-back">
-            <i class="fas fa-fighter-jet hide"></i>
-          </div>
-          <div id="sun" class="background-style card card-back">
-            <i class="fas fa-sun hide"></i>
-          </div>
-          <div id="swine" class="background-style card card-back">
-            <i class="fab fa-grunt hide"></i>
-          </div>
+    <div class="col s12 m10">
+      <div id="deckOfCards" class="game-board deck">
+        <div id="flask" class="background-style card card-back">
+          <i class="fas fa-flask hide"></i>
+        </div>
+        <div id="bullseye" class="background-style card card-back">
+          <i class="fas fa-bullseye hide"></i>
+        </div>
+        <div id="bullseye" class="background-style card card-back">
+          <i class="fas fa-bullseye hide"></i>
+        </div>
+        <div id="flask" class="background-style card card-back">
+          <i class="fas fa-flask hide"></i>
+        </div>
+        <div id="gravity" class="background-style card card-back">
+          <i class="fab fa-grav hide"></i>
+        </div>
+        <div id="diagnoses" class="background-style card card-back">
+          <i class="fas fa-diagnoses hide"></i>
+        </div>
+        <div id="dna" class="background-style card card-back">
+          <i class="fas fa-dna hide"></i>
+        </div>
+        <div id="diagnoses" class="background-style card card-back">
+          <i class="fas fa-diagnoses hide"></i>
+        </div>
+        <div id="gravity" class="background-style card card-back">
+          <i class="fab fa-grav hide"></i>
+        </div>
+        <div id="dna" class="background-style card card-back">
+          <i class="fas fa-dna hide"></i>
+        </div>
+        <div id="jet" class="background-style card card-back">
+          <i class="fas fa-fighter-jet hide"></i>
+        </div>
+        <div id="swine" class="background-style card card-back">
+          <i class="fab fa-grunt hide"></i>
+        </div>
+        <div id="sun" class="background-style card card-back">
+          <i class="fas fa-sun hide"></i>
+        </div>
+        <div id="jet" class="background-style card card-back">
+          <i class="fas fa-fighter-jet hide"></i>
+        </div>
+        <div id="sun" class="background-style card card-back">
+          <i class="fas fa-sun hide"></i>
+        </div>
+        <div id="swine" class="background-style card card-back">
+          <i class="fab fa-grunt hide"></i>
+        </div>
+        <div id="flask" class="background-style card card-back">
+          <i class="fas fa-flask hide"></i>
+        </div>
+        <div id="bullseye" class="background-style card card-back">
+          <i class="fas fa-bullseye hide"></i>
+        </div>
+        <div id="bullseye" class="background-style card card-back">
+          <i class="fas fa-bullseye hide"></i>
+        </div>
+        <div id="flask" class="background-style card card-back">
+          <i class="fas fa-flask hide"></i>
+        </div>
+        <div id="gravity" class="background-style card card-back">
+          <i class="fab fa-grav hide"></i>
+        </div>
+        <div id="diagnoses" class="background-style card card-back">
+          <i class="fas fa-diagnoses hide"></i>
+        </div>
+        <div id="dna" class="background-style card card-back">
+          <i class="fas fa-dna hide"></i>
+        </div>
+        <div id="diagnoses" class="background-style card card-back">
+          <i class="fas fa-diagnoses hide"></i>
+        </div>
+        <div id="gravity" class="background-style card card-back">
+          <i class="fab fa-grav hide"></i>
+        </div>
+        <div id="dna" class="background-style card card-back">
+          <i class="fas fa-dna hide"></i>
+        </div>
+        <div id="jet" class="background-style card card-back">
+          <i class="fas fa-fighter-jet hide"></i>
+        </div>
+        <div id="swine" class="background-style card card-back">
+          <i class="fab fa-grunt hide"></i>
+        </div>
+        <div id="sun" class="background-style card card-back">
+          <i class="fas fa-sun hide"></i>
+        </div>
+        <div id="jet" class="background-style card card-back">
+          <i class="fas fa-fighter-jet hide"></i>
+        </div>
+        <div id="sun" class="background-style card card-back">
+          <i class="fas fa-sun hide"></i>
+        </div>
+        <div id="swine" class="background-style card card-back">
+          <i class="fab fa-grunt hide"></i>
         </div>
       </div>
     </div>
+  </div>
 
 
-    <!-- Finish Modal -->
-    <div id="nice-try" class="modal modal-background">
-      <div class="modal-content">
-        <h4 class="modal-font">Mmmmmmm.</h4>
-        <p class="modal-font">You finished the game in <span id="modal-minutes" class='modal-font'></span> minutes <span id="modal-seconds" class='modal-font'></span> seconds and in <span id="modal-moves" class='modal-font'></span> moves. It's not the best time. Memory harder
-          next time!</p>
-        <a href="game.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Play Again?</a>
-        <a href="index.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Quit?</a>
-      </div>
+  <!-- Finish Modal -->
+  <div id="nice-try" class="modal modal-background">
+    <div class="modal-content">
+      <h4 class="modal-font">Mmmmmmm.</h4>
+      <p class="modal-font">You finished the game in <span id="modal-minutes" class='modal-font'></span> minutes <span id="modal-seconds" class='modal-font'></span> seconds and in <span id="modal-moves" class='modal-font'></span> moves. It's not the best time. Memory harder
+        next time!</p>
+      <a href="game.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Play Again?</a>
+      <a href="index.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Quit?</a>
     </div>
-    <div id="good-job" class="modal modal-background">
-      <div class="modal-content">
-        <h4 class="modal-font">Awesome!!!</h4>
-        <p class="modal-font">You finished the game in <span id="best-minutes" class='modal-font'></span> minutes <span id="best-seconds" class='modal-font'></span> seconds and in <span id="best-moves" class='modal-font'></span> moves. You have the new best time!</p>
-        <a href="game.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Play Again?</a>
-        <a href="index.html" class="modal-close waves-effect waves-green btn-flat  modal-font">Quit?</a>
-      </div>
+  </div>
+  <!-- Good Job Modal -->
+  <div id="good-job" class="modal modal-background">
+    <div class="modal-content">
+      <h4 class="modal-font">Awesome!!!</h4>
+      <p class="modal-font">You finished the game in <span id="best-minutes" class='modal-font'></span> minutes <span id="best-seconds" class='modal-font'></span> seconds and in <span id="best-moves" class='modal-font'></span> moves. You have the new best time!</p>
+      <a href="game.html" id="play-again" class="modal-close waves-effect waves-green btn-flat modal-font">Play Again?</a>
+      <a href="index.html" id="quit_game" class="modal-close waves-effect waves-green btn-flat modal-font">Quit?</a>
     </div>
-    <!-- Quit Modal -->
-    <div id="Quit-Game" class="modal modal-background">
-      <div class="modal-content">
-        <h4>Paused</h4>
-        <p class="modal-font modal-quit-font">Do you want to quit the game? </p>
-        <a id="yes" href="index.html" class="modal-close waves-effect waves-green btn-flat modal-font modal-quit-font">Yes</a>
-        <a id="no" class="modal-close waves-effect waves-green btn-flat modal-font modal-quit-font">No</a>
-      </div>
+  </div>
+  <!-- Quit Modal -->
+  <div id="Quit-Game" class="modal modal-background">
+    <div class="modal-content">
+      <h4>Paused</h4>
+      <p class="modal-font modal-quit-font">Do you want to quit the game? </p>
+      <a id="yes" href="index.html" class="modal-close waves-effect waves-green btn-flat modal-font modal-quit-font">Yes</a>
+      <a id="no" class="modal-close waves-effect waves-green btn-flat modal-font modal-quit-font">No</a>
     </div>
+  </div>
   </div>
   </div>
   <div class="row">
     <div class='col s6'>
-      <button type="button" class="btn" name="play" id="lets-play"> <h6>Start</h6> </button>
+      <button type="button" class="btn btn-margin" name="play" id="lets-play"> <h6>Start</h6> </button>
     </div>
     <div class='col s6'>
       <button type="button" name="play" id="quit" data-target="Quit-Game" class="btn modal-trigger">

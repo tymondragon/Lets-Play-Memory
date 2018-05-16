@@ -333,6 +333,14 @@ footer div button h6 {
   height: 50px;
   box-shadow: inset 0px 1px 20px 0px;
 }
+.btn-margin {
+    margin-left: 315px;
+}
 .card-panel {
   background-color: #ffb0b000;
+}
+@media only screen and (max-width: 800px) {
+  .btn-margin {
+      margin-left: 0px;
+  }
 }

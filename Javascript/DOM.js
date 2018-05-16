@@ -5,10 +5,11 @@ $(document).ready(function() {
   });
 
   bestTime = JSON.parse(localStorage.getItem('bestTime')) || {
-    name: "",
-    minute: 5,
-    second: 50
+    minute: 0,
+    second: 0,
+    timeSecond: 10000,
   }
+
   let moves = 0
   let count = 0
   // let second = 0, minute = 0
@@ -19,6 +20,11 @@ $(document).ready(function() {
   let deckOfCards = $("#deckOfCards")
 
   ////////////Muh Variables/////////////////////
+
+
+  ///////////////////////////////Best Time//////////////////////////
+
+    $('#best').text(`${bestTime.minute} Minutes ${bestTime.second} Seconds`)
 
   ////////////////shuffle the cards using the Fisher-Yates shuffle//////
   /////////This is a more effective shuffle than just Math.floor(Math.random) by removing the card as it is shuffled back,starting from the end, into the arrray///////
@@ -39,12 +45,15 @@ $(document).ready(function() {
 
   /////////////////Timer///////////////////
   let clock = {
-    second: 0,
+    timeSecond:0,
+    second:0 ,
     minute: 0,
     start: function() {
       this.interval = setInterval(function() {
         timer.text(`Minutes ${clock.minute} Seconds ${clock.second}`)
         clock.second++;
+        clock.timeSecond++;
+        console.log(bestTime.timeSecond, clock.timeSecond)
         if (clock.second == 60) {
           clock.minute++;
           clock.second = 0;
@@ -124,7 +133,7 @@ $(document).ready(function() {
     $("#best-minutes").text(`${clock.minute}`)
     $("#best-seconds").text(`${clock.second}`)
     $("#best-moves").text(`${moves}`)
-    localStorage.setItem("bestTime", JSON.stringify(bestTime))
+      localStorage.setItem("bestTime", JSON.stringify(bestTime))
   }
   ////////////////////////////////////////////////////
 
@@ -140,22 +149,19 @@ $(document).ready(function() {
 
   ///////////////////////Game Over//////////////
   function finish() {
-    if (count === 8) {
-      console.log(bestTime.second, clock.second)
+    if (count === 1) {
+      console.log(bestTime.timeSecond, clock.timeSecond)
       clearInterval(clock.interval);
       $(cardsArray).off("click")
       setTimeout(function() {
-        if (clock.minute <= bestTime.minute) {
-          if (clock.second < bestTime.second) {
+          if (clock.timeSecond < bestTime.timeSecond) {
             bestTime.second = clock.second
             bestTime.minute = clock.minute
+            bestTime.timeSecond = clock.timeSecond
             youWin()
           } else {
             niceTry()
           }
-        } else {
-          niceTry()
-        }
       }, 1000)
     }
   }
