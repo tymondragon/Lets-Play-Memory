@@ -30,15 +30,15 @@ body:hover figure:hover {
   flex: 3;
 }
 
-/* ///////////////////////Strobe//////////////////////////// */
+/* //////////^^^^^^///////Strobe/////^^^^^^////////////// */
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
 header {
   padding-top: 2%;
 }
-
-/* h5 {
-  font-size: 2rem;
-} */
 
 #landing-background {
   background-image: url("FontsAndColorsAndImages/Landing Page Image.jpg");
@@ -48,15 +48,13 @@ header {
 }
 
 #game-background {
-  box-sizing: border-box;
   background-image: url("FontsAndColorsAndImages/Landing Page Image.jpg");
+  height: 100%;
+  background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
   background-size: cover;
   text-align: center;
 }
-
 #Lets-Play {
   color: margin-bottom: 0px;
 }
@@ -141,61 +139,6 @@ h4, #play, .modal-font {
   background-color: #72b142;
 }
 
-/*////////////////////////////////////////////////////  */
-
-/* article {
-  grid-row: 2/3;
-  grid-column: 2 / 3;
-}
-
-.sidebar-right {
-  grid-row: 2;
-  grid-column: 3 / 4;
-}
-
-time-count {
-  grid-column: 2/3;
-}
-
-move-count {
-  grid-column: 3/4;
-} */
-
-/* footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  grid-row: 3/ 4;
-  grid-column: 2 / 3;
-} */
-
-span {
-  color: white;
-}
-
-.transform {
-  transform: rotate(270deg);
-}
-
-/* ////////////////////Grid COntainer/////////////////////// */
-
-/* .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: 40px;
-  width: 100%;
-  font-size: 20px;
-} */
-
-.image {
-  height: 50%;
-  width: 35%;
-  /* width: 100%;
-  height: 100%;*
-  position: relative; */
-}
-
 .info p {
   font-family: 'Press Start 2P', cursive;
   font-size: 27px;
@@ -217,19 +160,6 @@ span {
   font-family: 'Press Start 2P', cursive;
   color: #FFE727;
   text-shadow: -2px -2px 0 #597014, 2px -2px 0 #597014, -2px 2px 0 #597014, 2px 2px 0 #597014;
-}
-
-@media only screen and (max-width: 600px) {
-  .title {
-    font-size: 50px;
-    justify-content: center;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .info p {
-    font-size: 15px;
-  }
 }
 
 * {
@@ -269,12 +199,23 @@ div button h6 {
   background-color: #ffb0b000;
 }
 
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 50px;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .info p {
+    font-size: 15px;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .btn-margin {
     margin-left: 0px;
   }
-  /* } */
-  /* @media only screen and (max-width: 800px) { */
   .card-back {
     display: grid;
     background-size: 30px 30px;
@@ -287,49 +228,52 @@ div button h6 {
     margin-left: 1%;
     margin-bottom: 1%
   }
-  /* } */
-  @media only screen and (max-width: 800px) {
-    .show {
-      justify-content: center;
-      align-content: space-evenly;
-      margin-left: 1%;
-      background-color: #fff5ae;
-      border-style: solid;
-      border-radius: 5%;
-      border-color: #adbf4d85;
-      font-size: 30px;
-      align-self: center;
-    }
+}
+
+@media only screen and (max-width: 800px) {
+  .show {
+    justify-content: center;
+    align-content: space-evenly;
+    margin-left: 1%;
+    background-color: #fff5ae;
+    border-style: solid;
+    border-radius: 5%;
+    border-color: #adbf4d85;
+    font-size: 30px;
+    align-self: center;
   }
-  @media only screen and (max-width: 600px) {
-    .show {
-      justify-content: center;
-      align-content: space-evenly;
-      margin-left: 1%;
-      background-color: #fff5ae;
-      border-style: solid;
-      border-radius: 5%;
-      border-color: #adbf4d85;
-      font-size: 25px;
-      align-self: center;
-    }
+}
+
+@media only screen and (max-width: 600px) {
+  .show {
+    justify-content: center;
+    align-content: space-evenly;
+    margin-left: 1%;
+    background-color: #fff5ae;
+    border-style: solid;
+    border-radius: 5%;
+    border-color: #adbf4d85;
+    font-size: 25px;
+    align-self: center;
   }
-  @media only screen and (max-width: 990px) {
-    h5 {
-      font-size: 1.2rem;
-    }
-    h6 {
-      font-size: .9rem;
-    }
-    .game-row {
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 0px;
-    }
-    .move-count {
-      padding-bottom: 10%;
-    }
-    .cards {
-      height: 145px;
-    }
+}
+
+@media only screen and (max-width: 990px) {
+  h5 {
+    font-size: 1.2rem;
   }
+  h6 {
+    font-size: .9rem;
+  }
+  .game-row {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+  }
+  .move-count {
+    padding-bottom: 10%;
+  }
+  .cards {
+    height: 145px;
+  }
+}
