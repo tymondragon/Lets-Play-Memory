@@ -1,6 +1,6 @@
-let dec =[]
-let card=
-let cards = 
+// let dec =[]
+// let card=
+// let cards = 
 
 
 
